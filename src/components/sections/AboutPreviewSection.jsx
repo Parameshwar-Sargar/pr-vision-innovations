@@ -4,6 +4,7 @@ import { Target, Zap, Shield, HeartHandshake, MapPin, CheckCircle2 } from "lucid
 import { Container } from "../common/Container";
 import { SectionHeader } from "../common/SectionHeader";
 import { siteConfig } from "../../data/siteConfig";
+import { DigitalNetworkVisual } from "../visuals/about/DigitalNetworkVisual";
 
 /**
  * About Preview Section
@@ -70,14 +71,14 @@ export function AboutPreviewSection() {
             <div className="p-8 sm:p-10 rounded-3xl glass-panel relative overflow-hidden">
               <div className="flex items-center justify-between gap-4 mb-5">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#4285FF]">
-                  <MapPin className="w-3.5 h-3.5 text-[#4285FF]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#4285FF]" strokeWidth={1.8} />
                   <span>Headquartered in {siteConfig.location}</span>
                 </div>
-                <div className="w-8 h-8 rounded-lg bg-white/90 border border-white/80 p-1 shrink-0 shadow-sm">
+                <div className="h-8 w-auto flex items-center shrink-0">
                   <img
-                    src="/assets/pr-vision-logo-mark.png"
-                    alt="PR Vision Mark"
-                    className="w-full h-full object-contain"
+                    src="/assets/pr-vision-logo.jpg"
+                    alt="PR VISION INNOVATIONS"
+                    className="h-full w-auto object-contain rounded-md shadow-xs"
                   />
                 </div>
               </div>
@@ -96,19 +97,19 @@ export function AboutPreviewSection() {
 
               <div className="mt-8 pt-6 border-t border-slate-200/60 grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs text-[#0F172A] font-medium">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#4285FF] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#4285FF] shrink-0" strokeWidth={1.8} />
                   <span>Modern React &amp; Tailwind</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#F04CBF] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#F04CBF] shrink-0" strokeWidth={1.8} />
                   <span>Responsive on all viewports</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#A34DE0] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#A34DE0] shrink-0" strokeWidth={1.8} />
                   <span>Zero Bloat, High Speed</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" strokeWidth={1.8} />
                   <span>Direct Communication</span>
                 </div>
               </div>
@@ -131,7 +132,7 @@ export function AboutPreviewSection() {
                   <div
                     className={`w-11 h-11 rounded-xl ${p.bg} ${p.border} border flex items-center justify-center mb-4 transition-transform group-hover:scale-105 shadow-sm`}
                   >
-                    <Icon className={`w-5 h-5 ${p.color}`} />
+                    <Icon className={`w-5 h-5 ${p.color}`} strokeWidth={1.8} />
                   </div>
                   <h4 className="text-base font-bold text-[#0F172A] group-hover:text-[#4285FF] transition-colors">
                     {p.title}
@@ -144,6 +145,17 @@ export function AboutPreviewSection() {
             })}
           </div>
         </div>
+
+        {/* Unique Animated Digital Network Visual */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 lg:mt-16"
+        >
+          <DigitalNetworkVisual />
+        </motion.div>
       </Container>
     </section>
   );

@@ -71,31 +71,18 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Brand Logo with Official Approved Asset */}
+            {/* Brand Logo with Official Original Asset */}
             <a
               href="#hero"
               onClick={(e) => handleNavClick(e, "#hero")}
-              className="flex items-center gap-3 group focus:outline-none"
+              className="flex items-center group focus:outline-none py-1"
               aria-label="PR VISION INNOVATIONS Home"
             >
-              {/* Official 3D Emblem Mark */}
-              <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/90 backdrop-blur-md border border-white/80 flex items-center justify-center p-1 shadow-sm group-hover:border-[#F04CBF]/50 transition-all duration-300 overflow-hidden">
-                <img
-                  src="/assets/pr-vision-logo-mark.png"
-                  alt="PR VISION INNOVATIONS"
-                  className="w-full h-full object-contain transform group-hover:scale-105 transition-transform"
-                />
-              </div>
-
-              {/* Brand Typography */}
-              <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-extrabold tracking-tight text-[#0F172A] leading-tight">
-                  PR VISION
-                </span>
-                <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.24em] text-[#A34DE0] uppercase">
-                  INNOVATIONS
-                </span>
-              </div>
+              <img
+                src="/assets/pr-vision-logo.jpg"
+                alt="PR VISION INNOVATIONS"
+                className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 rounded-xl shadow-xs"
+              />
             </a>
 
             {/* Desktop Navigation Links */}
@@ -145,10 +132,10 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 rounded-xl bg-white/80 backdrop-blur-md border border-white/80 text-[#0F172A] hover:text-[#4285FF] hover:border-[#4285FF]/40 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl bg-white/80 backdrop-blur-md border border-white/80 text-[#0F172A] hover:text-[#4285FF] hover:border-[#4285FF]/40 transition-colors shadow-sm cursor-pointer"
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-5 h-5" strokeWidth={1.8} /> : <Menu className="w-5 h-5" strokeWidth={1.8} />}
               </button>
             </div>
           </div>
@@ -176,20 +163,12 @@ export function Navbar() {
             >
               <div className="flex flex-col gap-3">
                 {/* Mobile Drawer Brand Header */}
-                <div className="flex items-center gap-3 pb-5 mb-2 border-b border-slate-100">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-white/80 p-1 flex items-center justify-center shadow-sm">
-                    <img
-                      src="/assets/pr-vision-logo-mark.png"
-                      alt="PR VISION INNOVATIONS"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-base font-extrabold text-[#0F172A]">PR VISION</span>
-                    <span className="text-[9px] font-semibold tracking-[0.2em] text-[#A34DE0] uppercase">
-                      INNOVATIONS
-                    </span>
-                  </div>
+                <div className="flex items-center pb-5 mb-2 border-b border-slate-100">
+                  <img
+                    src="/assets/pr-vision-logo.jpg"
+                    alt="PR VISION INNOVATIONS"
+                    className="h-12 w-auto object-contain rounded-xl shadow-xs"
+                  />
                 </div>
 
                 <div className="text-xs font-semibold uppercase tracking-wider text-[#475569] mb-2">
@@ -203,7 +182,7 @@ export function Navbar() {
                     className="flex items-center justify-between py-3 px-4 rounded-xl text-[#0F172A] hover:bg-white/80 border border-transparent hover:border-white font-medium transition-colors"
                   >
                     <span>{link.label}</span>
-                    <ArrowRight className="w-4 h-4 text-[#475569]" />
+                    <ArrowRight className="w-4 h-4 text-[#475569]" strokeWidth={1.8} />
                   </a>
                 ))}
               </div>

@@ -1,9 +1,50 @@
 import React, { Suspense, Component } from "react";
-import { Canvas } from "@react-three/fiber";
-import { SceneObjects } from "./SceneObjects";
+import { Canvas, useThree } from "@react-three/fiber";
+import { FullScreenGlassEnvironment } from "./FullScreenGlassEnvironment";
+import { DigitalWorkspaceGroup } from "./InteractiveWorkspaceScene";
 import { HeroVisualFallback } from "./HeroVisualFallback";
 import { useWebGLAvailability } from "../../hooks/useWebGLAvailability";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
+
+/**
+ * Responsive Workspace Placer
+ * Adapts position and scale based on viewport width:
+ * - Desktop: Placed on the right (x: 2.7) alongside left typography.
+ * - Mobile / Tablet: Centered below hero text.
+ */
+function ResponsiveWorkspace({ isReducedMotion }) {
+  const { viewport } = useThree();
+  const isMobile = viewport.width < 9.2;
+
+  const position = isMobile ? [0, -1.9, 0.1] : [2.65, -0.15, 0.45];
+  const scale = isMobile ? [0.62, 0.62, 0.62] : [0.86, 0.86, 0.86];
+
+  return (
+    <DigitalWorkspaceGroup
+      isReducedMotion={isReducedMotion}
+      position={position}
+      scale={scale}
+    />
+  );
+}
+
+/**
+ * Unified 3D Master Scene
+ * Combines:
+ * 1. Edge-to-edge Full-Screen 3D Glass Environment (Ruby Red #D7264D, Golden Yellow #FFC928, Royal Purple #7028C8)
+ * 2. Floating Digital Workspace Ecosystem (Central laptop + 5 surrounding screens with UI textures)
+ */
+function MasterHero3DScene({ isReducedMotion }) {
+  return (
+    <>
+      {/* 1. Edge-to-Edge 3D Glass Environment & Studio Lighting */}
+      <FullScreenGlassEnvironment isReducedMotion={isReducedMotion} />
+
+      {/* 2. Floating Digital Workspace on Right Side */}
+      <ResponsiveWorkspace isReducedMotion={isReducedMotion} />
+    </>
+  );
+}
 
 /**
  * Robust Error Boundary to catch any 3D WebGL runtime exceptions
@@ -31,38 +72,32 @@ class CanvasErrorBoundary extends Component {
 }
 
 /**
- * Main Hero 3D Component with open, unclipped presentation,
- * natural fluid scaling, and soft ambient light background integration
+ * Main Full-Screen Hero 3D Component
+ * Spans edge-to-edge across the complete Hero background.
  */
 export function Hero3DCanvas() {
   const isWebGLAvailable = useWebGLAvailability();
   const isReducedMotion = useReducedMotion();
 
-  // If WebGL is not supported on user's device/browser, render clean 2D fallback
   if (!isWebGLAvailable) {
     return <HeroVisualFallback isReducedMotion={isReducedMotion} />;
   }
 
   return (
-    <div className="relative w-full h-[420px] sm:h-[500px] lg:h-[600px] xl:h-[660px] flex items-center justify-center overflow-visible">
-      {/* Soft chromatic fluid gradient halo behind the 3D visual */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
-        <div className="w-[300px] sm:w-[420px] lg:w-[500px] h-[300px] sm:h-[420px] lg:h-[500px] rounded-full bg-gradient-to-tr from-[#4285FF]/20 via-[#F04CBF]/18 to-[#FFD166]/15 blur-[110px]" />
-      </div>
-
+    <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden">
       <CanvasErrorBoundary fallback={<HeroVisualFallback isReducedMotion={isReducedMotion} />}>
         <Suspense fallback={<HeroVisualFallback isReducedMotion={isReducedMotion} />}>
           <Canvas
-            camera={{ position: [0, 0, 8.2], fov: 42 }}
+            camera={{ position: [0, 0, 7.8], fov: 46 }}
             dpr={[1, 1.5]}
             gl={{
               antialias: true,
               alpha: true,
               powerPreference: "high-performance"
             }}
-            className="w-full h-full cursor-grab active:cursor-grabbing !bg-transparent"
+            className="w-full h-full pointer-events-auto cursor-default !bg-transparent"
           >
-            <SceneObjects isReducedMotion={isReducedMotion} />
+            <MasterHero3DScene isReducedMotion={isReducedMotion} />
           </Canvas>
         </Suspense>
       </CanvasErrorBoundary>

@@ -50,11 +50,11 @@ export function Button({
   const content = (
     <>
       {Icon && iconPosition === "left" && (
-        <Icon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-0.5" />
+        <Icon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-0.5" strokeWidth={1.8} />
       )}
       <span>{children}</span>
       {Icon && iconPosition === "right" && (
-        <Icon className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+        <Icon className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={1.8} />
       )}
     </>
   );

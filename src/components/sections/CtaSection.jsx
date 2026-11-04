@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle, Mail, MapPin, Check, Sparkles } from "lucide-react";
+import { Mail, MapPin, Check, Sparkles } from "lucide-react";
 import { Container } from "../common/Container";
 import { WhatsAppButton } from "../common/WhatsAppButton";
 import { siteConfig } from "../../data/siteConfig";
+import { CommunicationVisual } from "../visuals/contact/CommunicationVisual";
 
 /**
  * CTA Section
@@ -33,7 +34,7 @@ export function CtaSection() {
         <div className="max-w-4xl mx-auto rounded-3xl p-8 sm:p-12 lg:p-14 glass-panel backdrop-blur-2xl relative overflow-hidden shadow-2xl">
           <div className="text-center max-w-2xl mx-auto">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-white/85 backdrop-blur-md text-[#4285FF] border border-[#4285FF]/25 mb-5 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-[#4285FF]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#4285FF]" strokeWidth={1.8} />
               <span>Direct Collaboration</span>
             </span>
 
@@ -49,8 +50,13 @@ export function CtaSection() {
             </p>
           </div>
 
+          {/* Unique Communication Visual */}
+          <div className="mt-8">
+            <CommunicationVisual />
+          </div>
+
           {/* Clean Inquiry Customizer */}
-          <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-white/70 backdrop-blur-md border border-white/80 shadow-xs">
+          <div className="mt-6 p-6 sm:p-8 rounded-2xl bg-white/70 backdrop-blur-md border border-white/80 shadow-xs">
             <label className="block text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-3.5">
               Select inquiry focus:
             </label>
@@ -98,7 +104,7 @@ export function CtaSection() {
                 )}&body=${encodeURIComponent(constructedMessage)}`}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/85 text-[#0F172A] hover:text-[#4285FF] border border-white/90 hover:border-[#4285FF]/40 text-sm sm:text-base font-medium transition-colors w-full sm:w-auto cursor-pointer shadow-sm"
               >
-                <Mail className="w-5 h-5 text-[#F04CBF]" />
+                <Mail className="w-5 h-5 text-[#F04CBF]" strokeWidth={1.8} />
                 <span>Email Our Studio</span>
               </a>
             </div>
@@ -111,11 +117,11 @@ export function CtaSection() {
           {/* Location & Response Details */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-[#475569]">
             <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#4285FF]" />
+              <MapPin className="w-4 h-4 text-[#4285FF]" strokeWidth={1.8} />
               <span>Based in Sangola, Maharashtra, India</span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-[#F04CBF]" />
+              <Check className="w-4 h-4 text-[#F04CBF]" strokeWidth={1.8} />
               <span>Prompt Response &amp; Direct Engineer Access</span>
             </div>
           </div>

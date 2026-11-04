@@ -36,11 +36,11 @@ export const siteConfig = {
     { label: "Contact", href: "#contact" },
   ],
 
-  // Social Media Placeholders
+  // Social Media Placeholders (Standardized Lucide Icon Names)
   socials: [
-    { name: "LinkedIn", href: "https://linkedin.com", icon: "Linkedin" },
-    { name: "GitHub", href: "https://github.com", icon: "Github" },
-    { name: "Twitter", href: "https://x.com", icon: "Twitter" },
-    { name: "Instagram", href: "https://instagram.com", icon: "Instagram" },
+    { name: "LinkedIn", href: "https://linkedin.com", icon: "Share2" },
+    { name: "GitHub", href: "https://github.com", icon: "GitBranch" },
+    { name: "Twitter", href: "https://x.com", icon: "MessageSquare" },
+    { name: "Instagram", href: "https://instagram.com", icon: "Camera" },
   ],
 };

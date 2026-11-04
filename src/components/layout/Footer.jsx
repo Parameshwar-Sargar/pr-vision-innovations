@@ -1,13 +1,12 @@
 import React from "react";
-import { ArrowUp, MapPin, Mail, Sparkles } from "lucide-react";
+import { ArrowUp, MapPin, Mail, Sparkles, Share2, GitBranch, MessageSquare, Camera } from "lucide-react";
 import { siteConfig } from "../../data/siteConfig";
 import { servicesData } from "../../data/servicesData";
 import { Container } from "../common/Container";
-import { LinkedinIcon, GithubIcon, TwitterIcon, InstagramIcon } from "../common/SocialIcons";
 
 /**
  * Premium Modern Footer with dynamic copyright year,
- * softer navy background, and clean typography.
+ * standardized Lucide React icons, and clean typography.
  */
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,10 +16,14 @@ export function Footer() {
   };
 
   const iconMap = {
-    Linkedin: LinkedinIcon,
-    Github: GithubIcon,
-    Twitter: TwitterIcon,
-    Instagram: InstagramIcon,
+    Share2: Share2,
+    GitBranch: GitBranch,
+    MessageSquare: MessageSquare,
+    Camera: Camera,
+    Linkedin: Share2,
+    Github: GitBranch,
+    Twitter: MessageSquare,
+    Instagram: Camera,
   };
 
   const handleNavClick = (e, href) => {
@@ -43,23 +46,14 @@ export function Footer() {
             <a
               href="#hero"
               onClick={(e) => handleNavClick(e, "#hero")}
-              className="flex items-center gap-3.5 group focus:outline-none mb-4"
+              className="flex items-center group focus:outline-none mb-5"
+              aria-label="PR VISION INNOVATIONS Home"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white/90 border border-white/80 flex items-center justify-center p-1 shadow-sm group-hover:border-[#F04CBF]/50 transition-all overflow-hidden">
-                <img
-                  src="/assets/pr-vision-logo-mark.png"
-                  alt="PR VISION INNOVATIONS"
-                  className="w-full h-full object-contain transform group-hover:scale-105 transition-transform"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-extrabold tracking-tight text-[#0F172A] leading-tight">
-                  PR VISION
-                </span>
-                <span className="text-[10px] font-semibold tracking-[0.24em] text-[#A34DE0] uppercase">
-                  INNOVATIONS
-                </span>
-              </div>
+              <img
+                src="/assets/pr-vision-logo.jpg"
+                alt="PR VISION INNOVATIONS"
+                className="h-16 sm:h-20 w-auto object-contain rounded-2xl shadow-md transition-transform group-hover:scale-105"
+              />
             </a>
 
             <p className="text-sm text-[#475569] leading-relaxed mb-6 max-w-sm font-normal">
@@ -68,11 +62,11 @@ export function Footer() {
 
             <div className="flex flex-col gap-2.5 text-xs text-[#475569]">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#4285FF] shrink-0" />
+                <MapPin className="w-4 h-4 text-[#4285FF] shrink-0" strokeWidth={1.8} />
                 <span>{siteConfig.location}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#F04CBF] shrink-0" />
+                <Mail className="w-4 h-4 text-[#F04CBF] shrink-0" strokeWidth={1.8} />
                 <span>{siteConfig.contact.email}</span>
               </div>
             </div>
@@ -90,7 +84,7 @@ export function Footer() {
                     className="w-9 h-9 rounded-xl bg-white/85 border border-white/90 flex items-center justify-center text-[#475569] hover:text-white hover:bg-gradient-to-tr hover:from-[#4285FF] hover:to-[#F04CBF] hover:border-transparent transition-all duration-300 shadow-xs"
                     aria-label={social.name}
                   >
-                    <IconComponent className="w-4 h-4" />
+                    <IconComponent className="w-4 h-4" strokeWidth={1.8} />
                   </a>
                 );
               })}
@@ -166,7 +160,7 @@ export function Footer() {
               aria-label="Scroll to top"
             >
               <span>Back to Top</span>
-              <ArrowUp className="w-3.5 h-3.5" />
+              <ArrowUp className="w-3.5 h-3.5" strokeWidth={1.8} />
             </button>
           </div>
         </div>

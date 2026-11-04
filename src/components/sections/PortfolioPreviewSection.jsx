@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Sparkles, Eye } from "lucide-react";
+import { ExternalLink, Sparkles, Eye, X } from "lucide-react";
 import { Container } from "../common/Container";
 import { SectionHeader } from "../common/SectionHeader";
 import { Badge } from "../common/Badge";
 import { portfolioData } from "../../data/portfolioData";
 import { buildWhatsAppLink } from "../../utils/whatsapp";
+import { ProjectPerspectiveMockup } from "../visuals/portfolio/ProjectPerspectiveMockup";
 
 /**
  * Featured Portfolio Preview Section
@@ -39,7 +40,7 @@ export function PortfolioPreviewSection() {
           viewport={{ once: true }}
           className="mb-12 max-w-2xl mx-auto px-5 py-3 rounded-2xl glass-panel text-center flex items-center justify-center gap-2.5 text-xs text-[#475569]"
         >
-          <Sparkles className="w-4 h-4 text-[#4285FF] shrink-0" />
+          <Sparkles className="w-4 h-4 text-[#4285FF] shrink-0" strokeWidth={1.8} />
           <span>
             <strong className="text-[#0F172A]">Transparency Notice:</strong> Projects below are internal architectural concept demonstrations designed to showcase our technical craftsmanship.
           </span>
@@ -73,41 +74,9 @@ export function PortfolioPreviewSection() {
                   </Badge>
                 </div>
 
-                {/* Subtle Concept Graphic */}
-                <div className="relative flex-1 p-6 flex flex-col justify-center items-center overflow-hidden">
-                  {/* Subtle Background Radial Glow */}
-                  <div
-                    className="absolute inset-0 opacity-20 blur-2xl pointer-events-none"
-                    style={{
-                      background: `radial-gradient(circle at center, ${project.accentColor}, transparent 70%)`,
-                    }}
-                  />
-
-                  {/* Clean Visual Representation Box */}
-                  <div className="w-full max-w-sm rounded-2xl p-4 bg-white/90 border border-white/80 shadow-md transform transition-transform duration-500 group-hover:scale-105 backdrop-blur-sm">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="w-24 h-2.5 rounded bg-[#4285FF]/30" />
-                      <div className="w-12 h-2 rounded bg-[#E2E8F0]" />
-                    </div>
-                    <div className="grid grid-cols-3 gap-2.5 mb-3">
-                      <div className="h-12 rounded-xl bg-white/80 border border-slate-100 p-2 flex flex-col justify-between">
-                        <div className="w-6 h-1.5 rounded bg-[#F04CBF]/50" />
-                        <div className="w-10 h-2 rounded bg-[#CBD5E1]" />
-                      </div>
-                      <div className="h-12 rounded-xl bg-white/80 border border-slate-100 p-2 flex flex-col justify-between">
-                        <div className="w-6 h-1.5 rounded bg-[#4285FF]/50" />
-                        <div className="w-10 h-2 rounded bg-[#CBD5E1]" />
-                      </div>
-                      <div className="h-12 rounded-xl bg-white/80 border border-slate-100 p-2 flex flex-col justify-between">
-                        <div className="w-6 h-1.5 rounded bg-[#55DDE0]/60" />
-                        <div className="w-10 h-2 rounded bg-[#CBD5E1]" />
-                      </div>
-                    </div>
-                    <div className="h-7 rounded-xl bg-white/80 border border-slate-100 flex items-center px-2.5 justify-between">
-                      <span className="text-[10px] text-[#475569] font-mono">Status: Interactive Preview</span>
-                      <div className="w-2 h-2 rounded-full bg-[#F04CBF] shadow-[0_0_8px_#F04CBF] animate-pulse" />
-                    </div>
-                  </div>
+                {/* 3D Perspective Browser & UI Mockup */}
+                <div className="relative flex-1 flex flex-col justify-center items-center overflow-hidden">
+                  <ProjectPerspectiveMockup projectId={project.id} />
                 </div>
               </div>
 
@@ -150,7 +119,7 @@ export function PortfolioPreviewSection() {
                     onClick={() => setSelectedProject(project)}
                     className="inline-flex items-center gap-1.5 text-xs font-medium text-[#475569] hover:text-[#0F172A] transition-colors cursor-pointer"
                   >
-                    <Eye className="w-4 h-4 text-[#A34DE0]" />
+                    <Eye className="w-4 h-4 text-[#A34DE0]" strokeWidth={1.8} />
                     <span>View Specifications</span>
                   </button>
 
@@ -159,7 +128,7 @@ export function PortfolioPreviewSection() {
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4285FF] hover:text-[#F04CBF] transition-colors cursor-pointer"
                   >
                     <span>Build Similar</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ExternalLink className="w-3.5 h-3.5" strokeWidth={1.8} />
                   </button>
                 </div>
               </div>
@@ -192,10 +161,10 @@ export function PortfolioPreviewSection() {
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="p-1.5 rounded-xl hover:bg-slate-100 text-[#475569] hover:text-[#0F172A] cursor-pointer text-lg leading-none"
+                  className="p-1.5 rounded-xl hover:bg-slate-100 text-[#475569] hover:text-[#0F172A] cursor-pointer transition-colors"
                   aria-label="Close modal"
                 >
-                  &times;
+                  <X className="w-5 h-5" strokeWidth={1.8} />
                 </button>
               </div>
 

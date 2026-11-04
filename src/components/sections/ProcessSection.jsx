@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Compass, FileCode2, Palette, Code2, Rocket, CheckCircle2 } from "lucide-react";
 import { Container } from "../common/Container";
 import { SectionHeader } from "../common/SectionHeader";
 import { processData } from "../../data/processData";
+import { WorkflowPipelineVisual } from "../visuals/process/WorkflowPipelineVisual";
 
 /**
  * Our Process Section
- * Step-by-step engineering roadmap: Discover, Plan, Design, Develop, Deliver
- * with clean, open cards, softer navy background, and smooth connecting flow.
+ * Step-by-step engineering roadmap with an animated interactive pipeline,
+ * connected stages, moving gradient laser lines, and progressive milestone cards.
  */
 export function ProcessSection() {
+  const [activeStep, setActiveStep] = useState("01");
+
   const iconComponents = {
     Compass: Compass,
     FileCode2: FileCode2,
@@ -31,23 +34,27 @@ export function ProcessSection() {
           description="From initial concept to production rollout, we execute with clarity, discipline, and attention to detail."
         />
 
+        {/* Unique Animated Workflow Pipeline Visual */}
+        <WorkflowPipelineVisual activeStep={activeStep} onSelectStep={setActiveStep} />
+
         {/* Process Flow Cards */}
         <div className="relative">
-          {/* Subtle fluid connecting line on desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-6 right-6 h-0.5 bg-gradient-to-r from-[#4285FF]/40 via-[#F04CBF]/50 to-[#FFD166]/40 -translate-y-12 z-0" />
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
             {processData.map((step, idx) => {
               const Icon = iconComponents[step.icon] || Compass;
+              const isSelected = activeStep === step.step;
 
               return (
                 <motion.div
                   key={step.step}
+                  onClick={() => setActiveStep(step.step)}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className="rounded-3xl p-6 sm:p-7 glass-panel transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 group"
+                  className={`rounded-3xl p-6 sm:p-7 glass-panel transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 cursor-pointer group ${
+                    isSelected ? "ring-2 ring-[#4285FF] shadow-lg" : ""
+                  }`}
                 >
                   <div>
                     {/* Header: Step Number & Icon */}
@@ -56,7 +63,7 @@ export function ProcessSection() {
                         {step.step}
                       </span>
                       <div className="w-10 h-10 rounded-2xl bg-white/90 border border-white/80 flex items-center justify-center text-[#4285FF] group-hover:text-[#F04CBF] shadow-sm transition-colors">
-                        <Icon className="w-5 h-5" />
+                        <Icon className="w-5 h-5" strokeWidth={1.8} />
                       </div>
                     </div>
 
@@ -78,7 +85,7 @@ export function ProcessSection() {
                   <div className="mt-6 pt-4 border-t border-slate-200/60 flex flex-col gap-1.5">
                     {step.highlights.map((item) => (
                       <div key={item} className="flex items-center gap-1.5 text-[11px] text-[#475569]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#F04CBF] shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#F04CBF] shrink-0" strokeWidth={1.8} />
                         <span>{item}</span>
                       </div>
                     ))}

@@ -46,7 +46,7 @@ export function WhatsAppButton({
       )}
       aria-label="Direct inquiry via WhatsApp"
     >
-      <MessageCircle className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+      <MessageCircle className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.8} />
       <span>{label}</span>
     </motion.a>
   );
