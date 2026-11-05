@@ -13,8 +13,7 @@ import { SystemMonitorVisual } from "../visuals/services/SystemMonitorVisual";
 
 /**
  * Services Preview Section
- * Displays the 5 core services with bespoke animated visual identities for each discipline:
- * Web Development, Mobile Development, UI/UX Design, Full Stack, and Maintenance.
+ * Strictly Pure Black (#050505 / #0A0A0D) with Electric Blue (#1677FF) and Deep Crimson (#B5122A).
  */
 export function ServicesPreviewSection() {
   const iconComponents = {
@@ -26,6 +25,11 @@ export function ServicesPreviewSection() {
   };
 
   const serviceVisuals = {
+    "static-website": WebDevWindowVisual,
+    "react-development": MobileDeviceVisual,
+    "full-stack-development": FullStackVisual,
+    "website-redesign": UiUxLayersVisual,
+    "website-maintenance": SystemMonitorVisual,
     "web-dev": WebDevWindowVisual,
     "mobile-dev": MobileDeviceVisual,
     "ui-ux": UiUxLayersVisual,
@@ -39,14 +43,13 @@ export function ServicesPreviewSection() {
   };
 
   return (
-    <section id="services" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="services" className="relative py-24 lg:py-32 overflow-hidden bg-[#050505]">
       <Container className="relative z-10">
         <SectionHeader
           badge="Specialized Services"
           badgeVariant="blue"
           title="Digital Capabilities Tailored for"
           titleAccent="Modern Growth"
-          accentVariant="blue"
           description="We deliver five core digital disciplines engineered to help businesses establish, enhance, and protect their web presence."
         />
 
@@ -68,25 +71,25 @@ export function ServicesPreviewSection() {
                 }`}
               >
                 <div>
-                  {/* Bespoke Visual Header for each service */}
+                  {/* Visual Header */}
                   {VisualComponent && (
                     <div className="mb-5">
                       <VisualComponent />
                     </div>
                   )}
 
-                  {/* Service Icon with Clean Fluid Accent & Title */}
+                  {/* Service Icon with Clean Blue Accent & Title */}
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-white/90 border border-white/80 flex items-center justify-center text-[#4285FF] group-hover:text-[#F04CBF] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[#0A0A0D] border border-white/10 flex items-center justify-center text-[#1677FF] group-hover:text-[#B5122A] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
                       <Icon className="w-4.5 h-4.5" strokeWidth={1.8} />
                     </div>
-                    <h3 className="text-lg font-bold text-[#0F172A] group-hover:text-[#4285FF] transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-white group-hover:text-[#287BFF] transition-colors leading-snug">
                       {service.title}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="mt-3 text-sm text-[#475569] leading-relaxed font-normal">
+                  <p className="mt-3 text-sm text-[#A1A1AA] leading-relaxed font-normal">
                     {service.shortDesc}
                   </p>
 
@@ -95,7 +98,7 @@ export function ServicesPreviewSection() {
                     {service.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 text-[#475569] border border-white/80"
+                        className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/[0.05] text-[#A1A1AA] border border-white/10"
                       >
                         {tag}
                       </span>
@@ -104,10 +107,10 @@ export function ServicesPreviewSection() {
                 </div>
 
                 {/* Bottom Action CTA */}
-                <div className="mt-8 pt-5 border-t border-slate-200/60 flex items-center justify-between">
+                <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
                   <button
                     onClick={() => handleInquire(service.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4285FF] hover:text-[#A34DE0] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#287BFF] hover:text-white transition-colors cursor-pointer"
                   >
                     <span>Inquire Service</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" strokeWidth={1.8} />
@@ -115,7 +118,7 @@ export function ServicesPreviewSection() {
 
                   <button
                     onClick={() => handleInquire(service.title)}
-                    className="p-2 rounded-xl bg-white/85 border border-white/90 text-[#25D366] hover:bg-[#25D366]/10 hover:border-[#25D366]/40 transition-colors cursor-pointer shadow-xs"
+                    className="p-2 rounded-xl bg-[#0A0A0D] border border-white/10 text-white/80 hover:text-[#1677FF] hover:border-[#1677FF]/40 transition-colors cursor-pointer shadow-xs"
                     title="Quick WhatsApp Inquiry"
                     aria-label={`WhatsApp inquiry for ${service.title}`}
                   >

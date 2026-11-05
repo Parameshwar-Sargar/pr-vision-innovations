@@ -5,8 +5,8 @@ import { servicesData } from "../../data/servicesData";
 import { Container } from "../common/Container";
 
 /**
- * Premium Modern Footer with dynamic copyright year,
- * standardized Lucide React icons, and clean typography.
+ * Premium Modern Footer in Dark Cinematic styling
+ * Standardized Lucide icons, Pure Black background, Electric Blue & Crimson accents.
  */
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,9 +38,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-white/75 backdrop-blur-2xl border-t border-white/80 pt-16 pb-12 overflow-hidden">
+    <footer className="relative bg-[#050505] border-t border-white/10 pt-16 pb-12 overflow-hidden text-white">
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-200/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-white/10">
           {/* Column 1: Brand Info & Location (Span 2 cols on LG) */}
           <div className="lg:col-span-2 flex flex-col items-start">
             <a
@@ -56,17 +56,17 @@ export function Footer() {
               />
             </a>
 
-            <p className="text-sm text-[#475569] leading-relaxed mb-6 max-w-sm font-normal">
+            <p className="text-sm text-[#A1A1AA] leading-relaxed mb-6 max-w-sm font-normal">
               {siteConfig.description}
             </p>
 
-            <div className="flex flex-col gap-2.5 text-xs text-[#475569]">
+            <div className="flex flex-col gap-2.5 text-xs text-[#A1A1AA]">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#4285FF] shrink-0" strokeWidth={1.8} />
+                <MapPin className="w-4 h-4 text-[#1677FF] shrink-0" strokeWidth={1.8} />
                 <span>{siteConfig.location}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#F04CBF] shrink-0" strokeWidth={1.8} />
+                <Mail className="w-4 h-4 text-[#B5122A] shrink-0" strokeWidth={1.8} />
                 <span>{siteConfig.contact.email}</span>
               </div>
             </div>
@@ -81,7 +81,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-xl bg-white/85 border border-white/90 flex items-center justify-center text-[#475569] hover:text-white hover:bg-gradient-to-tr hover:from-[#4285FF] hover:to-[#F04CBF] hover:border-transparent transition-all duration-300 shadow-xs"
+                    className="w-9 h-9 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#A1A1AA] hover:text-white hover:bg-[#1677FF] hover:border-[#1677FF] transition-all duration-300 shadow-xs"
                     aria-label={social.name}
                   >
                     <IconComponent className="w-4 h-4" strokeWidth={1.8} />
@@ -93,7 +93,7 @@ export function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="flex flex-col">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
               Navigation
             </h3>
             <ul className="flex flex-col gap-2.5">
@@ -102,7 +102,7 @@ export function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-sm text-[#475569] hover:text-[#4285FF] transition-colors"
+                    className="text-sm text-[#A1A1AA] hover:text-[#1677FF] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -113,7 +113,7 @@ export function Footer() {
 
           {/* Column 3: Services Offered */}
           <div className="flex flex-col">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
               Services
             </h3>
             <ul className="flex flex-col gap-2.5">
@@ -122,7 +122,7 @@ export function Footer() {
                   <a
                     href="#services"
                     onClick={(e) => handleNavClick(e, "#services")}
-                    className="text-sm text-[#475569] hover:text-[#F04CBF] transition-colors"
+                    className="text-sm text-[#A1A1AA] hover:text-[#1677FF] transition-colors"
                   >
                     {service.title}
                   </a>
@@ -133,30 +133,30 @@ export function Footer() {
 
           {/* Column 4: Focus & Commitment */}
           <div className="flex flex-col">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
               Our Vision
             </h3>
-            <p className="text-xs text-[#475569] leading-relaxed mb-4 font-normal">
+            <p className="text-xs text-[#A1A1AA] leading-relaxed mb-4 font-normal">
               An independent studio dedicated to modern craftsmanship, transparent processes, and performance-first web architectures.
             </p>
-            <div className="p-4 rounded-2xl bg-white/80 border border-white/80 text-xs text-[#475569] relative overflow-hidden shadow-xs">
-              <span className="text-gradient-fluid font-bold block mb-1">Empowering Businesses</span>
+            <div className="p-4 rounded-2xl bg-[#0A0A0D] border border-white/10 text-xs text-[#A1A1AA] relative overflow-hidden shadow-xs">
+              <span className="text-gradient-blue-red font-bold block mb-1">Empowering Businesses</span>
               Delivering high-standard digital presence from Sangola to the world.
             </div>
           </div>
         </div>
 
         {/* Bottom Bar with Dynamic Year and Back to Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#475569]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A1A1AA]">
           <p>
-            &copy; {currentYear} <span className="text-[#0F172A] font-semibold">PR VISION INNOVATIONS</span>. All rights reserved.
+            &copy; {currentYear} <span className="text-white font-semibold">PR VISION INNOVATIONS</span>. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">
             <span>Built with React &amp; Three.js</span>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/85 border border-white/90 hover:border-[#4285FF]/40 text-[#475569] hover:text-[#0F172A] hover:bg-white transition-colors cursor-pointer shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-[#1677FF]/40 text-[#A1A1AA] hover:text-white hover:bg-white/[0.08] transition-colors cursor-pointer shadow-xs"
               aria-label="Scroll to top"
             >
               <span>Back to Top</span>

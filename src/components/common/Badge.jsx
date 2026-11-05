@@ -2,28 +2,25 @@ import React from "react";
 import { cn } from "../../utils/cn";
 
 /**
- * Reusable pill badge with glowing indicator for Light Theme
+ * Reusable pill badge with glowing indicator for Dark Cinematic Theme
+ * Strictly uses Black, Electric Blue, and Dark Red.
  */
 export function Badge({
   children,
-  variant = "blue", // 'blue' | 'violet' | 'cyan' | 'neutral'
+  variant = "blue", // 'blue' | 'red' | 'neutral'
   showDot = true,
   className = "",
 }) {
   const variantStyles = {
-    blue: "bg-white/80 backdrop-blur-sm text-[#4285FF] border-[#4285FF]/30 shadow-sm",
-    violet: "bg-white/80 backdrop-blur-sm text-[#A34DE0] border-[#A34DE0]/30 shadow-sm",
-    pink: "bg-white/80 backdrop-blur-sm text-[#F04CBF] border-[#F04CBF]/30 shadow-sm",
-    cyan: "bg-white/80 backdrop-blur-sm text-[#0284C7] border-[#55DDE0]/50 shadow-sm",
-    neutral: "bg-white/80 backdrop-blur-sm text-[#475569] border-white/80 shadow-sm",
+    blue: "bg-[#0A0A0D]/90 backdrop-blur-md text-[#287BFF] border-[#1677FF]/35 shadow-[0_0_12px_rgba(22,119,255,0.18)]",
+    red: "bg-[#0A0A0D]/90 backdrop-blur-md text-[#FF4D4F] border-[#B5122A]/40 shadow-[0_0_12px_rgba(181,18,42,0.2)]",
+    neutral: "bg-[#0A0A0D]/90 backdrop-blur-md text-[#A1A1AA] border-white/10 shadow-sm",
   };
 
   const dotColors = {
-    blue: "bg-[#4285FF]",
-    violet: "bg-[#A34DE0]",
-    pink: "bg-[#F04CBF]",
-    cyan: "bg-[#55DDE0]",
-    neutral: "bg-slate-400",
+    blue: "bg-[#1677FF]",
+    red: "bg-[#B5122A]",
+    neutral: "bg-[#A1A1AA]",
   };
 
   return (

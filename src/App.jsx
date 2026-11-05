@@ -7,13 +7,14 @@ import { FluidWaveBackground } from "./components/common/FluidWaveBackground";
 
 /**
  * Root Application Component with React Router DOM integration
- * Features global 3D Fluid Waves Background with colorful layered aesthetic
+ * Dark Cinematic identity with Pure Black (#050505), Electric Blue (#1677FF),
+ * and Deep Crimson (#B5122A).
  */
 function App() {
   return (
     <Router>
-      <div className="relative flex flex-col min-h-screen text-[#0F172A] selection:bg-[#F04CBF] selection:text-white">
-        {/* Global 3D Layered Fluid Waves Background */}
+      <div className="relative flex flex-col min-h-screen bg-[#050505] text-white selection:bg-[#1677FF] selection:text-white">
+        {/* Global Dark Cinematic Ambient Background */}
         <FluidWaveBackground />
 
         {/* Translucent Glass Navigation Bar */}

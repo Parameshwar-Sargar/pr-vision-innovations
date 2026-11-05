@@ -4,8 +4,8 @@ import { Badge } from "./Badge";
 import { cn } from "../../utils/cn";
 
 /**
- * Standardized Section Header with Badge, Headline, and Description
- * Optimized for Premium Light Theme
+ * Standardized Section Header for Dark Cinematic Theme
+ * Strictly uses White headings, Blue-to-Dark-Red accents, and #A1A1AA descriptions.
  */
 export function SectionHeader({
   badge,
@@ -44,11 +44,11 @@ export function SectionHeader({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-[#0F172A] leading-[1.2]"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-white leading-[1.2]"
         >
           {title}{" "}
           {titleAccent && (
-            <span className="text-gradient-fluid">
+            <span className="text-gradient-blue-red">
               {titleAccent}
             </span>
           )}
@@ -61,7 +61,7 @@ export function SectionHeader({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, delay: 0.2 }}
-          className="mt-4 text-base sm:text-lg text-[#475569] leading-relaxed font-normal"
+          className="mt-4 text-base sm:text-lg text-[#A1A1AA] leading-relaxed font-normal"
         >
           {description}
         </motion.p>

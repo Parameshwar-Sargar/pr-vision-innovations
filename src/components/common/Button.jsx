@@ -3,11 +3,15 @@ import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
 
 /**
- * Reusable Button component for Premium Light Agency Theme
+ * Reusable Button component for Premium Dark Cinematic Theme
+ * Strictly uses:
+ * - Electric Blue: #1677FF / #287BFF
+ * - Dark Red / Crimson: #8B0000 / #B5122A
+ * - Pure Black: #050505 / #0A0A0D
  */
 export function Button({
   children,
-  variant = "primary", // 'primary' | 'secondary' | 'outline' | 'ghost' | 'glow'
+  variant = "primary", // 'primary' | 'secondary' | 'outline' | 'ghost' | 'darkRed'
   size = "md", // 'sm' | 'md' | 'lg'
   href,
   onClick,
@@ -29,15 +33,17 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-gradient-to-r from-[#4285FF] via-[#A34DE0] to-[#F04CBF] text-white hover:from-[#55DDE0] hover:via-[#4285FF] hover:to-[#FF8A9A] shadow-[0_4px_20px_rgba(240,76,191,0.35)] hover:shadow-[0_6px_28px_rgba(66,133,255,0.45)] border border-transparent font-semibold",
+      "bg-[#1677FF] hover:bg-[#287BFF] text-white shadow-[0_0_20px_rgba(22,119,255,0.4)] hover:shadow-[0_0_28px_rgba(40,123,255,0.6)] border border-transparent font-semibold",
     secondary:
-      "bg-white/85 backdrop-blur-md text-[#0F172A] hover:bg-white border border-white/90 hover:border-[#4285FF]/40 shadow-[0_2px_10px_rgba(0,0,0,0.04)] font-medium",
+      "bg-[#0A0A0D]/80 backdrop-blur-md text-white hover:bg-[#1677FF]/10 border border-white/12 hover:border-[#1677FF]/40 shadow-[0_2px_10px_rgba(0,0,0,0.5)] font-medium",
     outline:
-      "bg-transparent text-[#4285FF] hover:bg-[#4285FF]/08 border border-[#4285FF]/40 hover:border-[#4285FF] font-medium",
+      "bg-transparent text-[#287BFF] hover:bg-[#1677FF]/10 border border-[#1677FF]/40 hover:border-[#287BFF] font-medium",
     ghost:
-      "bg-transparent text-[#475569] hover:text-[#0F172A] hover:bg-white/50",
+      "bg-transparent text-[#A1A1AA] hover:text-white hover:bg-white/[0.06]",
+    darkRed:
+      "bg-[#8B0000] hover:bg-[#B5122A] text-white border border-[#B5122A]/40 shadow-[0_0_18px_rgba(181,18,42,0.35)] font-semibold",
     glow:
-      "bg-gradient-to-r from-[#4285FF] via-[#F04CBF] to-[#FFD166] text-white shadow-[0_4px_25px_rgba(240,76,191,0.4)] hover:shadow-[0_6px_30px_rgba(66,133,255,0.5)] border border-transparent font-semibold",
+      "bg-[#1677FF] hover:bg-[#287BFF] text-white shadow-[0_0_24px_rgba(22,119,255,0.5)] border border-[#287BFF]/40 font-semibold",
   };
 
   const combinedClasses = cn(
@@ -60,26 +66,15 @@ export function Button({
   );
 
   if (href) {
-    const isExternal = href.startsWith("http") || href.startsWith("https") || href.startsWith("mailto:") || href.startsWith("tel:");
     return (
-      <motion.a
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        href={href}
-        className={combinedClasses}
-        target={isExternal ? "_blank" : undefined}
-        rel={isExternal ? "noopener noreferrer" : undefined}
-        {...props}
-      >
+      <a href={href} onClick={onClick} className={combinedClasses} {...props}>
         {content}
-      </motion.a>
+      </a>
     );
   }
 
   return (
-    <motion.button
-      whileHover={disabled ? {} : { scale: 1.02 }}
-      whileTap={disabled ? {} : { scale: 0.98 }}
+    <button
       type={type}
       onClick={onClick}
       disabled={disabled}
@@ -87,7 +82,7 @@ export function Button({
       {...props}
     >
       {content}
-    </motion.button>
+    </button>
   );
 }
 

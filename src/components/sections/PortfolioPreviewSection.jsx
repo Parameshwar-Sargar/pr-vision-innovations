@@ -10,8 +10,7 @@ import { ProjectPerspectiveMockup } from "../visuals/portfolio/ProjectPerspectiv
 
 /**
  * Featured Portfolio Preview Section
- * Clean, modern presentation of concept showcases with softer navy tones,
- * open layouts, and elegant preview cards.
+ * Strictly Pure Black (#050505 / #0A0A0D) with Electric Blue (#1677FF) and Deep Crimson (#B5122A).
  */
 export function PortfolioPreviewSection() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -22,14 +21,13 @@ export function PortfolioPreviewSection() {
   };
 
   return (
-    <section id="portfolio" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="portfolio" className="relative py-24 lg:py-32 overflow-hidden bg-[#050505]">
       <Container className="relative z-10">
         <SectionHeader
           badge="Featured Work"
           badgeVariant="blue"
           title="Concept &amp; Prototype"
           titleAccent="Architecture Showcases"
-          accentVariant="blue"
           description="Explore our interactive concept prototypes demonstrating our design standards, technology stack, and engineering capabilities."
         />
 
@@ -38,11 +36,11 @@ export function PortfolioPreviewSection() {
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 max-w-2xl mx-auto px-5 py-3 rounded-2xl glass-panel text-center flex items-center justify-center gap-2.5 text-xs text-[#475569]"
+          className="mb-12 max-w-2xl mx-auto px-5 py-3 rounded-2xl glass-panel text-center flex items-center justify-center gap-2.5 text-xs text-[#A1A1AA]"
         >
-          <Sparkles className="w-4 h-4 text-[#4285FF] shrink-0" strokeWidth={1.8} />
+          <Sparkles className="w-4 h-4 text-[#1677FF] shrink-0" strokeWidth={1.8} />
           <span>
-            <strong className="text-[#0F172A]">Transparency Notice:</strong> Projects below are internal architectural concept demonstrations designed to showcase our technical craftsmanship.
+            <strong className="text-white">Transparency Notice:</strong> Projects below are internal architectural concept demonstrations designed to showcase our technical craftsmanship.
           </span>
         </motion.div>
 
@@ -58,15 +56,15 @@ export function PortfolioPreviewSection() {
               className="group relative rounded-3xl glass-panel overflow-hidden flex flex-col justify-between hover:-translate-y-2 transition-all duration-300"
             >
               {/* Card Header Visual Viewport */}
-              <div className="relative h-56 sm:h-64 w-full bg-gradient-to-b from-white/40 to-white/10 border-b border-white/80 overflow-hidden flex flex-col">
+              <div className="relative h-56 sm:h-64 w-full bg-black/60 border-b border-white/10 overflow-hidden flex flex-col">
                 {/* Clean Top Bar */}
-                <div className="px-5 py-3 bg-white/70 border-b border-white/80 flex items-center justify-between z-20 backdrop-blur-sm">
+                <div className="px-5 py-3 bg-[#0A0A0D]/90 border-b border-white/10 flex items-center justify-between z-20 backdrop-blur-sm">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#CBD5E1]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#CBD5E1]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#CBD5E1]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#B5122A]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#1677FF]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#287BFF]" />
                   </div>
-                  <span className="text-[10px] text-[#475569] font-mono tracking-wider">
+                  <span className="text-[10px] text-[#A1A1AA] font-mono tracking-wider">
                     concept://prvision.{project.id}
                   </span>
                   <Badge variant="blue" showDot={false} className="py-0.5 px-2 text-[10px]">
@@ -84,19 +82,19 @@ export function PortfolioPreviewSection() {
               <div className="p-7 sm:p-8 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-xs font-semibold text-[#A34DE0] tracking-wider uppercase">
+                    <span className="text-xs font-semibold text-[#1677FF] tracking-wider uppercase">
                       {project.category}
                     </span>
-                    <span className="text-xs text-[#475569] font-mono">
+                    <span className="text-xs text-[#A1A1AA] font-mono">
                       {project.metrics.focus}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-[#0F172A] transition-colors">
+                  <h3 className="text-xl font-bold text-white transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="mt-2.5 text-sm text-[#475569] leading-relaxed font-normal">
+                  <p className="mt-2.5 text-sm text-[#A1A1AA] leading-relaxed font-normal">
                     {project.description}
                   </p>
 
@@ -105,7 +103,7 @@ export function PortfolioPreviewSection() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/70 text-[#475569] border border-white/80"
+                        className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/[0.05] text-[#A1A1AA] border border-white/10"
                       >
                         {tech}
                       </span>
@@ -114,18 +112,18 @@ export function PortfolioPreviewSection() {
                 </div>
 
                 {/* Card Action Buttons */}
-                <div className="mt-8 pt-5 border-t border-slate-200/60 flex items-center justify-between">
+                <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-[#475569] hover:text-[#0F172A] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-[#A1A1AA] hover:text-white transition-colors cursor-pointer"
                   >
-                    <Eye className="w-4 h-4 text-[#A34DE0]" strokeWidth={1.8} />
+                    <Eye className="w-4 h-4 text-[#1677FF]" strokeWidth={1.8} />
                     <span>View Specifications</span>
                   </button>
 
                   <button
                     onClick={() => handleInquireProject(project.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4285FF] hover:text-[#F04CBF] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#287BFF] hover:text-white transition-colors cursor-pointer"
                   >
                     <span>Build Similar</span>
                     <ExternalLink className="w-3.5 h-3.5" strokeWidth={1.8} />
@@ -137,70 +135,77 @@ export function PortfolioPreviewSection() {
         </div>
       </Container>
 
-      {/* Specifications Modal for project details */}
+      {/* Specifications Modal */}
       <AnimatePresence>
         {selectedProject && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#101828]/50 backdrop-blur-sm"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.2 }}
-              className="relative w-full max-w-lg p-6 sm:p-8 rounded-3xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-2xl"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-2xl bg-[#0A0A0D] border border-white/15 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden text-white"
             >
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                <div>
-                  <Badge variant="blue">{selectedProject.badge}</Badge>
-                  <h4 className="text-xl font-bold text-[#0F172A] mt-1.5">
-                    {selectedProject.title}
-                  </h4>
-                </div>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-5 right-5 p-2 rounded-xl bg-white/[0.08] text-[#A1A1AA] hover:text-white transition-colors"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold text-[#1677FF] uppercase tracking-wider">
+                  {selectedProject.category}
+                </span>
+                <span className="text-xs text-[#A1A1AA] font-mono">• {selectedProject.badge}</span>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-4">
+                {selectedProject.title}
+              </h3>
+
+              <p className="text-sm text-[#A1A1AA] leading-relaxed mb-6">
+                {selectedProject.description}
+              </p>
+
+              <div className="mb-6 p-4 rounded-xl bg-black/60 border border-white/10">
+                <div className="text-xs font-semibold uppercase text-white mb-2">Architecture Highlights &amp; Stack</div>
+                <ul className="space-y-1.5 text-xs text-[#A1A1AA]">
+                  {(selectedProject.features || selectedProject.technologies || []).map((f, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1677FF]" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex justify-end gap-3 pt-4 border-t border-white/10">
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="p-1.5 rounded-xl hover:bg-slate-100 text-[#475569] hover:text-[#0F172A] cursor-pointer transition-colors"
-                  aria-label="Close modal"
+                  className="px-4 py-2 rounded-xl text-xs font-medium text-[#A1A1AA] hover:text-white transition-colors"
                 >
-                  <X className="w-5 h-5" strokeWidth={1.8} />
+                  Close
                 </button>
-              </div>
-
-              <div className="py-4 space-y-3.5 text-sm text-[#475569]">
-                <p>{selectedProject.description}</p>
-                <div className="p-4 rounded-2xl bg-white/80 border border-slate-100 space-y-2.5">
-                  <div className="flex justify-between text-xs">
-                    <span className="text-[#475569]">Project Type:</span>
-                    <span className="text-[#0F172A] font-medium">{selectedProject.category}</span>
-                  </div>
-                  <div className="flex justify-between text-xs">
-                    <span className="text-[#475569]">Architectural Focus:</span>
-                    <span className="text-[#4285FF] font-medium">{selectedProject.metrics.focus}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 flex gap-3">
                 <button
                   onClick={() => {
                     handleInquireProject(selectedProject.title);
                     setSelectedProject(null);
                   }}
-                  className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-[#4285FF] via-[#A34DE0] to-[#F04CBF] hover:opacity-95 text-white font-medium text-xs sm:text-sm text-center shadow-md cursor-pointer transition-all"
+                  className="px-5 py-2 rounded-xl text-xs font-semibold bg-[#1677FF] hover:bg-[#287BFF] text-white shadow-lg shadow-[#1677FF]/30 transition-all"
                 >
-                  Discuss Custom Implementation
-                </button>
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="px-4 py-2.5 rounded-xl bg-white text-[#0F172A] hover:bg-slate-50 text-xs sm:text-sm border border-slate-200 cursor-pointer"
-                >
-                  Close
+                  Inquire This Architecture
                 </button>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </section>

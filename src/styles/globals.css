@@ -4,154 +4,150 @@
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   
-  /* Final 10-Color Fluid Palette */
-  --color-fluid-cyan: #55DDE0;
-  --color-fluid-sky: #75CFFF;
-  --color-fluid-electric: #4285FF;
-  --color-fluid-lavender: #B9A0F5;
-  --color-fluid-violet: #8055D9;
-  --color-fluid-purple: #A34DE0;
-  --color-fluid-pink: #F04CBF;
-  --color-fluid-coral: #FF8A9A;
-  --color-fluid-peach: #FFC6A8;
-  --color-fluid-yellow: #FFD166;
-
-  /* UI Base Tokens */
-  --color-main-bg: #FAFBFF;
-  --color-text-main: #0F172A;
-  --color-text-muted: #475569;
-  --color-border-glass: rgba(255, 255, 255, 0.7);
+  /* Strict Black, Blue & Dark Red Theme Tokens */
+  --color-bg-primary: #050505;
+  --color-bg-secondary: #0A0A0D;
+  --color-accent-blue: #1677FF;
+  --color-glow-blue: #287BFF;
+  --color-accent-darkred: #8B0000;
+  --color-accent-crimson: #B5122A;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A1A1AA;
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
+    background-color: #050505;
+    color: #FFFFFF;
   }
   
   body {
-    background-color: #FAFBFF;
-    color: #0F172A;
+    background-color: #050505;
+    color: #FFFFFF;
     overflow-x: hidden;
   }
   
   ::selection {
-    background-color: #F04CBF;
+    background-color: #1677FF;
     color: #FFFFFF;
   }
 
-  /* Custom subtle scrollbar */
+  /* Custom subtle dark scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 7px;
   }
   ::-webkit-scrollbar-track {
-    background: #FAFBFF;
+    background: #050505;
   }
   ::-webkit-scrollbar-thumb {
-    background: #C4B5FD;
+    background: #27272A;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #A34DE0;
+    background: #1677FF;
   }
 }
 
 /* ========================================================
-   VIBRANT 3D FLUID GRADIENT DESIGN SYSTEM
+   PREMIUM BLACK, BLUE & DARK RED DESIGN SYSTEM
    ======================================================== */
 
-/* Multi-color Fluid Wave Text Gradient (Blue -> Violet -> Pink -> Coral) */
-.text-gradient-fluid {
-  background: linear-gradient(135deg, #4285FF 0%, #A34DE0 32%, #F04CBF 72%, #FF8A9A 100%);
+/* Blue to Deep Crimson Text Gradient */
+.text-gradient-fluid,
+.text-gradient-blue-red {
+  background: linear-gradient(135deg, #1677FF 0%, #287BFF 40%, #B5122A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Cyan -> Electric Blue -> Lavender Accent */
-.text-gradient-cyan-blue {
-  background: linear-gradient(135deg, #55DDE0 0%, #4285FF 50%, #8055D9 100%);
+/* Electric Blue Heading Gradient */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #FFFFFF 30%, #287BFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Sunset Accent (Pink -> Coral -> Golden Yellow) */
-.text-gradient-sunset {
-  background: linear-gradient(135deg, #F04CBF 0%, #FF8A9A 50%, #FFD166 100%);
+/* Dark Red Accent Gradient */
+.text-gradient-red {
+  background: linear-gradient(135deg, #B5122A 0%, #8B0000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Charcoal to Electric Blue Gradient for Headings */
+/* Charcoal to Electric Blue Gradient */
 .text-gradient-heading {
-  background: linear-gradient(135deg, #0F172A 35%, #4285FF 100%);
+  background: linear-gradient(135deg, #FFFFFF 40%, #287BFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Premium Frosted Glass Panel (Elevated over Fluid Waves) */
+/* Premium Black Glass Panel */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(10, 10, 13, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 10px 32px -4px rgba(66, 133, 255, 0.08), 0 2px 10px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.5);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel:hover {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(240, 76, 191, 0.4);
-  box-shadow: 0 16px 40px -6px rgba(163, 77, 224, 0.16), 0 4px 16px rgba(66, 133, 255, 0.1);
+  background: rgba(14, 14, 18, 0.92);
+  border-color: rgba(22, 119, 255, 0.3);
+  box-shadow: 0 16px 40px -6px rgba(0, 0, 0, 0.85), 0 0 24px -2px rgba(22, 119, 255, 0.15);
   transform: translateY(-3px);
 }
 
-/* Translucent Glass Navigation Bar */
+/* Pure Black Navigation Bar */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(5, 5, 5, 0.88);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 20px -2px rgba(66, 133, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
 }
 
-/* Primary Multi-color Gradient Button */
+/* Primary Electric Blue Button */
 .btn-fluid-primary {
-  background: linear-gradient(135deg, #4285FF 0%, #A34DE0 40%, #F04CBF 80%, #FF8A9A 100%);
+  background: #1677FF;
   color: #FFFFFF;
-  box-shadow: 0 4px 20px rgba(240, 76, 191, 0.35), 0 2px 8px rgba(66, 133, 255, 0.25);
+  box-shadow: 0 0 20px rgba(22, 119, 255, 0.35);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-fluid-primary:hover {
-  background: linear-gradient(135deg, #55DDE0 0%, #4285FF 30%, #F04CBF 75%, #FFD166 100%);
-  box-shadow: 0 6px 28px rgba(240, 76, 191, 0.45), 0 4px 14px rgba(66, 133, 255, 0.35);
+  background: #287BFF;
+  box-shadow: 0 0 28px rgba(40, 123, 255, 0.5);
   transform: translateY(-2px);
 }
 
-/* Secondary Frosted Glass Button */
+/* Secondary Transparent Black Glass Button */
 .btn-fluid-secondary {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(10, 10, 13, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  color: #0F172A;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-fluid-secondary:hover {
-  background: #FFFFFF;
-  border-color: rgba(66, 133, 255, 0.4);
-  box-shadow: 0 4px 18px rgba(66, 133, 255, 0.12);
+  background: rgba(22, 119, 255, 0.1);
+  border-color: rgba(22, 119, 255, 0.4);
+  box-shadow: 0 4px 18px rgba(22, 119, 255, 0.15);
   transform: translateY(-2px);
 }
 
-/* Subtle Fluid Grid Accent */
+/* Subtle Dark Grid Accent */
 .bg-grid-fluid {
   background-size: 56px 56px;
   background-image: 
-    linear-gradient(to right, rgba(66, 133, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(240, 76, 191, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 /* Reduced motion preference */

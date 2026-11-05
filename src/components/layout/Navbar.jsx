@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { siteConfig } from "../../data/siteConfig";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
 import { Button } from "../common/Button";
 
 /**
- * Premium Translucent White Navigation Bar
+ * Premium Dark Cinematic Navigation Bar
+ * Strictly uses Pure Black (#050505), Electric Blue (#1677FF), and White (#FFFFFF).
  */
 export function Navbar() {
   const { isScrolled } = useScrollPosition(25);
@@ -65,7 +66,7 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "glass-nav py-3"
+            ? "bg-[#050505]/90 backdrop-blur-2xl border-b border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.8)] py-3"
             : "bg-transparent py-4 sm:py-5"
         }`}
       >
@@ -86,7 +87,7 @@ export function Navbar() {
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center gap-1 lg:gap-2 bg-white/75 backdrop-blur-xl px-4 py-1.5 rounded-full border border-white/80 shadow-[0_2px_12px_rgba(66,133,255,0.06)]">
+            <nav className="hidden md:flex items-center gap-1 lg:gap-2 bg-[#0A0A0D]/90 backdrop-blur-xl px-4 py-1.5 rounded-full border border-white/10 shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
               {siteConfig.navLinks.map((link) => {
                 const target = link.href.replace("#", "");
                 const isActive = activeSection === target;
@@ -97,15 +98,15 @@ export function Navbar() {
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={`relative px-3.5 py-1.5 text-xs lg:text-sm font-medium rounded-full transition-all duration-200 ${
                       isActive
-                        ? "text-[#4285FF] bg-white font-semibold shadow-xs"
-                        : "text-[#475569] hover:text-[#0F172A] hover:bg-white/60"
+                        ? "text-white bg-[#1677FF]/20 font-semibold shadow-xs"
+                        : "text-[#A1A1AA] hover:text-white hover:bg-white/[0.06]"
                     }`}
                   >
                     {link.label}
                     {isActive && (
                       <motion.div
                         layoutId="activeNavIndicatorFluid"
-                        className="absolute inset-0 rounded-full border border-[#4285FF]/25 -z-10"
+                        className="absolute inset-0 rounded-full border border-[#1677FF]/50 -z-10"
                         transition={{ type: "spring", stiffness: 350, damping: 30 }}
                       />
                     )}
@@ -132,7 +133,7 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 rounded-xl bg-white/80 backdrop-blur-md border border-white/80 text-[#0F172A] hover:text-[#4285FF] hover:border-[#4285FF]/40 transition-colors shadow-sm cursor-pointer"
+                className="p-2.5 rounded-xl bg-[#0A0A0D]/90 backdrop-blur-md border border-white/10 text-white hover:text-[#1677FF] hover:border-[#1677FF]/40 transition-colors shadow-sm cursor-pointer"
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" strokeWidth={1.8} /> : <Menu className="w-5 h-5" strokeWidth={1.8} />}
@@ -150,7 +151,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-40 bg-black/70 backdrop-blur-md md:hidden"
             onClick={() => setMobileMenuOpen(false)}
           >
             <motion.div
@@ -158,12 +159,11 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 250 }}
-              className="absolute right-0 top-0 bottom-0 w-3/4 max-w-sm bg-white/95 backdrop-blur-2xl border-l border-white/80 p-6 pt-24 flex flex-col justify-between shadow-2xl"
+              className="absolute right-0 top-0 bottom-0 w-3/4 max-w-sm bg-[#050505]/95 backdrop-blur-2xl border-l border-white/10 p-6 pt-24 flex flex-col justify-between shadow-2xl text-white"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col gap-3">
-                {/* Mobile Drawer Brand Header */}
-                <div className="flex items-center pb-5 mb-2 border-b border-slate-100">
+                <div className="flex items-center pb-5 mb-2 border-b border-white/10">
                   <img
                     src="/assets/pr-vision-logo.jpg"
                     alt="PR VISION INNOVATIONS"
@@ -171,7 +171,7 @@ export function Navbar() {
                   />
                 </div>
 
-                <div className="text-xs font-semibold uppercase tracking-wider text-[#475569] mb-2">
+                <div className="text-xs font-semibold uppercase tracking-wider text-[#A1A1AA] mb-2">
                   Navigation
                 </div>
                 {siteConfig.navLinks.map((link) => (
@@ -179,28 +179,25 @@ export function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="flex items-center justify-between py-3 px-4 rounded-xl text-[#0F172A] hover:bg-white/80 border border-transparent hover:border-white font-medium transition-colors"
+                    className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:text-white hover:bg-white/[0.08] transition-colors"
                   >
                     <span>{link.label}</span>
-                    <ArrowRight className="w-4 h-4 text-[#475569]" strokeWidth={1.8} />
+                    <ArrowRight className="w-4 h-4 text-[#1677FF]" />
                   </a>
                 ))}
               </div>
 
-              <div className="pt-6 border-t border-slate-100 flex flex-col gap-3">
+              <div className="pt-6 border-t border-white/10">
                 <Button
                   variant="primary"
                   size="md"
                   href="#contact"
-                  className="w-full"
                   onClick={(e) => handleNavClick(e, "#contact")}
-                  icon={Sparkles}
+                  icon={ArrowRight}
+                  className="w-full"
                 >
                   Get Started
                 </Button>
-                <p className="text-center text-xs text-[#475569] mt-2">
-                  Sangola, Maharashtra, India
-                </p>
               </div>
             </motion.div>
           </motion.div>

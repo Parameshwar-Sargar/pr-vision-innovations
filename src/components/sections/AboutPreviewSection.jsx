@@ -8,8 +8,7 @@ import { DigitalNetworkVisual } from "../visuals/about/DigitalNetworkVisual";
 
 /**
  * About Preview Section
- * Clean, open layout with softer navy background, generous whitespace,
- * and elegant cards highlighting the studio's engineering standards.
+ * Strictly Black (#050505 / #0A0A0D) with Electric Blue (#1677FF) and Deep Crimson (#B5122A) accents.
  */
 export function AboutPreviewSection() {
   const principles = [
@@ -17,45 +16,44 @@ export function AboutPreviewSection() {
       icon: Zap,
       title: "Precision Engineering",
       desc: "Clean, modular React and web code designed for speed, scalability, and long-term maintainability.",
-      color: "text-[#4285FF]",
-      bg: "bg-[#4285FF]/10",
-      border: "border-[#4285FF]/25",
+      color: "text-[#1677FF]",
+      bg: "bg-[#1677FF]/10",
+      border: "border-[#1677FF]/30",
     },
     {
       icon: Target,
       title: "Bespoke Design",
       desc: "Every digital touchpoint is uniquely tailored to reflect your brand's voice and commercial goals.",
-      color: "text-[#F04CBF]",
-      bg: "bg-[#F04CBF]/10",
-      border: "border-[#F04CBF]/25",
+      color: "text-[#B5122A]",
+      bg: "bg-[#B5122A]/10",
+      border: "border-[#B5122A]/30",
     },
     {
       icon: HeartHandshake,
       title: "Direct Collaboration",
       desc: "Work directly with the builders. No cumbersome layers, transparent communication, and rapid iterations.",
-      color: "text-[#A34DE0]",
-      bg: "bg-[#A34DE0]/10",
-      border: "border-[#A34DE0]/25",
+      color: "text-[#1677FF]",
+      bg: "bg-[#1677FF]/10",
+      border: "border-[#1677FF]/30",
     },
     {
       icon: Shield,
       title: "Performance & Reliability",
       desc: "Fast load times, responsive mobile layouts, and modern web standards built into every deliverable.",
-      color: "text-[#0284C7]",
-      bg: "bg-[#55DDE0]/15",
-      border: "border-[#55DDE0]/35",
+      color: "text-[#287BFF]",
+      bg: "bg-[#287BFF]/10",
+      border: "border-[#287BFF]/30",
     },
   ];
 
   return (
-    <section id="about" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="about" className="relative py-24 lg:py-32 overflow-hidden bg-[#050505]">
       <Container className="relative z-10">
         <SectionHeader
           badge="About Our Studio"
           badgeVariant="blue"
           title="An Emerging Independent"
           titleAccent="Digital Solutions Studio"
-          accentVariant="blue"
           description="Crafting modern, reliable web solutions with a focused engineering mindset."
         />
 
@@ -70,8 +68,8 @@ export function AboutPreviewSection() {
           >
             <div className="p-8 sm:p-10 rounded-3xl glass-panel relative overflow-hidden">
               <div className="flex items-center justify-between gap-4 mb-5">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#4285FF]">
-                  <MapPin className="w-3.5 h-3.5 text-[#4285FF]" strokeWidth={1.8} />
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#1677FF]">
+                  <MapPin className="w-3.5 h-3.5 text-[#1677FF]" strokeWidth={1.8} />
                   <span>Headquartered in {siteConfig.location}</span>
                 </div>
                 <div className="h-8 w-auto flex items-center shrink-0">
@@ -83,33 +81,33 @@ export function AboutPreviewSection() {
                 </div>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0F172A] leading-snug">
+              <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
                 Dedicated to helping businesses establish an authentic, high-impact digital presence.
               </h3>
 
-              <p className="mt-4 text-sm sm:text-base text-[#475569] leading-relaxed font-normal">
+              <p className="mt-4 text-sm sm:text-base text-[#A1A1AA] leading-relaxed font-normal">
                 PR VISION INNOVATIONS was founded to bridge the gap between creative visual design and robust web architecture. As an emerging independent studio, we take pride in delivering focused, tailored web experiences without the bloated processes of legacy agencies.
               </p>
 
-              <p className="mt-3.5 text-sm sm:text-base text-[#475569] leading-relaxed font-normal">
+              <p className="mt-3.5 text-sm sm:text-base text-[#A1A1AA] leading-relaxed font-normal">
                 Whether you are a growing enterprise needing a modern React application or a business launching its first high-converting website, we provide dedicated craftsmanship from day one.
               </p>
 
-              <div className="mt-8 pt-6 border-t border-slate-200/60 grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs text-[#0F172A] font-medium">
+              <div className="mt-8 pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs text-white font-medium">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#4285FF] shrink-0" strokeWidth={1.8} />
+                  <CheckCircle2 className="w-4 h-4 text-[#1677FF] shrink-0" strokeWidth={1.8} />
                   <span>Modern React &amp; Tailwind</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#F04CBF] shrink-0" strokeWidth={1.8} />
+                  <CheckCircle2 className="w-4 h-4 text-[#B5122A] shrink-0" strokeWidth={1.8} />
                   <span>Responsive on all viewports</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#A34DE0] shrink-0" strokeWidth={1.8} />
+                  <CheckCircle2 className="w-4 h-4 text-[#1677FF] shrink-0" strokeWidth={1.8} />
                   <span>Zero Bloat, High Speed</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" strokeWidth={1.8} />
+                  <CheckCircle2 className="w-4 h-4 text-[#287BFF] shrink-0" strokeWidth={1.8} />
                   <span>Direct Communication</span>
                 </div>
               </div>
@@ -134,10 +132,10 @@ export function AboutPreviewSection() {
                   >
                     <Icon className={`w-5 h-5 ${p.color}`} strokeWidth={1.8} />
                   </div>
-                  <h4 className="text-base font-bold text-[#0F172A] group-hover:text-[#4285FF] transition-colors">
+                  <h4 className="text-base font-bold text-white group-hover:text-[#1677FF] transition-colors">
                     {p.title}
                   </h4>
-                  <p className="mt-2 text-xs sm:text-sm text-[#475569] leading-relaxed font-normal">
+                  <p className="mt-2 text-xs sm:text-sm text-[#A1A1AA] leading-relaxed font-normal">
                     {p.desc}
                   </p>
                 </motion.div>
