@@ -5,14 +5,14 @@ import { buildWhatsAppLink } from "../../utils/whatsapp";
 import { cn } from "../../utils/cn";
 
 /**
- * Dedicated WhatsApp Inquiry Button with official green/cyan glow and configurable message
+ * Dedicated WhatsApp Inquiry Button
  */
 export function WhatsAppButton({
   customMessage,
   label = "Chat on WhatsApp",
   size = "md",
   className = "",
-  variant = "brand", // 'brand' | 'green' | 'outline'
+  variant = "burgundy", // 'burgundy' | 'brand' | 'green' | 'outline'
 }) {
   const href = buildWhatsAppLink(customMessage);
 
@@ -23,30 +23,32 @@ export function WhatsAppButton({
   };
 
   const variantClasses = {
+    burgundy:
+      "bg-[#910029] text-[#ECF4F7] hover:bg-[#7A0023] shadow-md shadow-[#910029]/25 border border-transparent",
     brand:
-      "bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white hover:from-[#2fe571] hover:to-[#17a091] shadow-[0_4px_20px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_25px_rgba(37,211,102,0.5)] border border-[#25D366]/40",
+      "bg-[#910029] text-[#ECF4F7] hover:bg-[#7A0023] shadow-md shadow-[#910029]/25 border border-transparent",
     green:
-      "bg-[#25D366] text-white hover:bg-[#20ba5a] shadow-[0_4px_20px_rgba(37,211,102,0.3)]",
+      "bg-[#25D366] text-white hover:bg-[#20ba5a] shadow-sm",
     outline:
-      "bg-transparent text-[#25D366] hover:bg-[#25D366]/10 border border-[#25D366]/50",
+      "bg-transparent text-[#910029] hover:bg-[#910029]/10 border border-[#910029]/40",
   };
 
   return (
     <motion.a
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 cursor-pointer select-none group",
+        "inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 cursor-pointer select-none group",
         sizeClasses[size] || sizeClasses.md,
-        variantClasses[variant] || variantClasses.brand,
+        variantClasses[variant] || variantClasses.burgundy,
         className
       )}
       aria-label="Direct inquiry via WhatsApp"
     >
-      <MessageCircle className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.8} />
+      <MessageCircle className="w-5 h-5 transition-transform duration-200 group-hover:scale-105" strokeWidth={1.8} />
       <span>{label}</span>
     </motion.a>
   );

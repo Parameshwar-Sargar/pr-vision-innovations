@@ -8,8 +8,8 @@ import { WorkflowPipelineVisual } from "../visuals/process/WorkflowPipelineVisua
 
 /**
  * Our Process Section
- * Step-by-step engineering roadmap with an animated interactive pipeline,
- * connected stages, moving laser lines, and progressive milestone cards in Dark Cinematic styling.
+ * Step-by-step engineering roadmap with an animated interactive pipeline
+ * in Light Ice (#ECF4F7), Slate Charcoal (#393F4B), and Deep Burgundy (#910029).
  */
 export function ProcessSection() {
   const [activeStep, setActiveStep] = useState("01");
@@ -23,14 +23,13 @@ export function ProcessSection() {
   };
 
   return (
-    <section id="process" className="relative py-24 lg:py-32 bg-[#050505] overflow-hidden">
+    <section id="process" className="relative py-24 lg:py-32 bg-[#ECF4F7] overflow-hidden">
       <Container className="relative z-10">
         <SectionHeader
           badge="How We Work"
-          badgeVariant="blue"
+          badgeVariant="burgundy"
           title="A Structured, Transparent"
           titleAccent="Engineering Process"
-          accentVariant="blue"
           description="From initial concept to production rollout, we execute with clarity, discipline, and attention to detail."
         />
 
@@ -52,42 +51,42 @@ export function ProcessSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className={`rounded-3xl p-6 sm:p-7 bg-[#0A0A0D]/90 border backdrop-blur-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-2 cursor-pointer group ${
+                  className={`rounded-3xl p-6 sm:p-7 bg-white border transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 cursor-pointer group shadow-xs ${
                     isSelected
-                      ? "border-[#1677FF] ring-2 ring-[#1677FF] shadow-[0_0_25px_rgba(22,119,255,0.25)]"
-                      : "border-white/10 hover:border-white/25"
+                      ? "border-[#910029] ring-2 ring-[#910029] shadow-md shadow-[#910029]/10"
+                      : "border-[#393F4B]/10 hover:border-[#910029]/30 hover:shadow-md"
                   }`}
                 >
                   <div>
                     {/* Header: Step Number & Icon */}
                     <div className="flex items-center justify-between mb-5">
-                      <span className="text-2xl font-bold font-mono text-[#A1A1AA]/60 group-hover:text-[#1677FF] transition-colors">
+                      <span className="text-2xl font-bold font-mono text-[#393F4B]/30 group-hover:text-[#910029] transition-colors">
                         {step.step}
                       </span>
-                      <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#1677FF] group-hover:text-[#287BFF] group-hover:border-[#1677FF]/40 shadow-sm transition-colors">
+                      <div className="w-10 h-10 rounded-2xl bg-[#910029]/10 border border-[#910029]/20 flex items-center justify-center text-[#910029] group-hover:scale-105 shadow-xs transition-all">
                         <Icon className="w-5 h-5" strokeWidth={1.8} />
                       </div>
                     </div>
 
                     {/* Step Title & Tagline */}
-                    <h3 className="text-lg font-bold text-white transition-colors">
+                    <h3 className="text-lg font-bold text-[#393F4B] transition-colors">
                       {step.title}
                     </h3>
-                    <p className="text-xs font-semibold text-[#B5122A] uppercase tracking-wider mt-0.5">
+                    <p className="text-xs font-semibold text-[#910029] uppercase tracking-wider mt-0.5">
                       {step.tagline}
                     </p>
 
                     {/* Description */}
-                    <p className="mt-3 text-xs sm:text-sm text-[#A1A1AA] leading-relaxed font-normal">
+                    <p className="mt-3 text-xs sm:text-sm text-[#393F4B]/80 leading-relaxed font-normal">
                       {step.description}
                     </p>
                   </div>
 
                   {/* Highlights list */}
-                  <div className="mt-6 pt-4 border-t border-white/10 flex flex-col gap-1.5">
+                  <div className="mt-6 pt-4 border-t border-[#393F4B]/10 flex flex-col gap-1.5">
                     {step.highlights.map((item) => (
-                      <div key={item} className="flex items-center gap-1.5 text-[11px] text-[#A1A1AA]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1677FF] shrink-0" strokeWidth={1.8} />
+                      <div key={item} className="flex items-center gap-1.5 text-[11px] text-[#393F4B]/80">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#910029] shrink-0" strokeWidth={1.8} />
                         <span>{item}</span>
                       </div>
                     ))}

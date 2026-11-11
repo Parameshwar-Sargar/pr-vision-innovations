@@ -1,17 +1,14 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
 
 /**
- * Reusable Button component for Premium Dark Cinematic Theme
- * Strictly uses:
- * - Electric Blue: #1677FF / #287BFF
- * - Dark Red / Crimson: #8B0000 / #B5122A
- * - Pure Black: #050505 / #0A0A0D
+ * Reusable Button component for Minimal Three-Color Theme:
+ * - Primary: Deep Burgundy #910029 with Light Ice #ECF4F7 text
+ * - Secondary: Light Ice #ECF4F7 with Slate Charcoal #393F4B text and subtle Burgundy border
  */
 export function Button({
   children,
-  variant = "primary", // 'primary' | 'secondary' | 'outline' | 'ghost' | 'darkRed'
+  variant = "primary", // 'primary' | 'secondary' | 'outline' | 'ghost'
   size = "md", // 'sm' | 'md' | 'lg'
   href,
   onClick,
@@ -23,7 +20,7 @@ export function Button({
   ...props
 }) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium transition-all duration-300 rounded-xl cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none group";
+    "inline-flex items-center justify-center font-medium transition-all duration-200 rounded-xl cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none group";
 
   const sizeStyles = {
     sm: "text-xs px-4 py-2 gap-1.5",
@@ -33,17 +30,17 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-[#1677FF] hover:bg-[#287BFF] text-white shadow-[0_0_20px_rgba(22,119,255,0.4)] hover:shadow-[0_0_28px_rgba(40,123,255,0.6)] border border-transparent font-semibold",
+      "bg-[#910029] hover:bg-[#7A0023] text-[#ECF4F7] shadow-sm shadow-[#910029]/25 hover:shadow-md hover:shadow-[#910029]/35 border border-transparent font-semibold",
     secondary:
-      "bg-[#0A0A0D]/80 backdrop-blur-md text-white hover:bg-[#1677FF]/10 border border-white/12 hover:border-[#1677FF]/40 shadow-[0_2px_10px_rgba(0,0,0,0.5)] font-medium",
+      "bg-[#ECF4F7] hover:bg-white text-[#393F4B] hover:text-[#910029] border border-[#910029]/30 hover:border-[#910029] shadow-xs font-medium",
     outline:
-      "bg-transparent text-[#287BFF] hover:bg-[#1677FF]/10 border border-[#1677FF]/40 hover:border-[#287BFF] font-medium",
+      "bg-transparent text-[#910029] hover:bg-[#910029]/10 border border-[#910029]/40 hover:border-[#910029] font-medium",
     ghost:
-      "bg-transparent text-[#A1A1AA] hover:text-white hover:bg-white/[0.06]",
-    darkRed:
-      "bg-[#8B0000] hover:bg-[#B5122A] text-white border border-[#B5122A]/40 shadow-[0_0_18px_rgba(181,18,42,0.35)] font-semibold",
+      "bg-transparent text-[#393F4B] hover:text-[#910029] hover:bg-[#393F4B]/05",
     glow:
-      "bg-[#1677FF] hover:bg-[#287BFF] text-white shadow-[0_0_24px_rgba(22,119,255,0.5)] border border-[#287BFF]/40 font-semibold",
+      "bg-[#910029] hover:bg-[#7A0023] text-[#ECF4F7] shadow-md shadow-[#910029]/30 font-semibold",
+    darkRed:
+      "bg-[#910029] hover:bg-[#7A0023] text-[#ECF4F7] font-semibold",
   };
 
   const combinedClasses = cn(
@@ -56,11 +53,11 @@ export function Button({
   const content = (
     <>
       {Icon && iconPosition === "left" && (
-        <Icon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-0.5" strokeWidth={1.8} />
+        <Icon className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-0.5" strokeWidth={1.8} />
       )}
       <span>{children}</span>
       {Icon && iconPosition === "right" && (
-        <Icon className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={1.8} />
+        <Icon className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" strokeWidth={1.8} />
       )}
     </>
   );

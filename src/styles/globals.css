@@ -4,150 +4,123 @@
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   
-  /* Strict Black, Blue & Dark Red Theme Tokens */
-  --color-bg-primary: #050505;
-  --color-bg-secondary: #0A0A0D;
-  --color-accent-blue: #1677FF;
-  --color-glow-blue: #287BFF;
-  --color-accent-darkred: #8B0000;
-  --color-accent-crimson: #B5122A;
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #A1A1AA;
-  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  /* Strict Light Ice, Slate Charcoal & Deep Burgundy Palette */
+  --color-ice-bg: #ECF4F7;
+  --color-charcoal: #393F4B;
+  --color-burgundy: #910029;
+  --color-burgundy-hover: #7A0023;
+  --color-border-subtle: rgba(57, 63, 75, 0.1);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
-    background-color: #050505;
-    color: #FFFFFF;
+    background-color: #ECF4F7;
+    color: #393F4B;
   }
   
   body {
-    background-color: #050505;
-    color: #FFFFFF;
+    background-color: #ECF4F7;
+    color: #393F4B;
     overflow-x: hidden;
   }
   
   ::selection {
-    background-color: #1677FF;
-    color: #FFFFFF;
+    background-color: #910029;
+    color: #ECF4F7;
   }
 
-  /* Custom subtle dark scrollbar */
+  /* Custom subtle clean scrollbar */
   ::-webkit-scrollbar {
     width: 7px;
   }
   ::-webkit-scrollbar-track {
-    background: #050505;
+    background: #ECF4F7;
   }
   ::-webkit-scrollbar-thumb {
-    background: #27272A;
+    background: #C4D3D8;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #1677FF;
+    background: #910029;
   }
 }
 
 /* ========================================================
-   PREMIUM BLACK, BLUE & DARK RED DESIGN SYSTEM
+   PREMIUM LIGHT ICE, SLATE CHARCOAL & DEEP BURGUNDY SYSTEM
    ======================================================== */
 
-/* Blue to Deep Crimson Text Gradient */
+/* Deep Burgundy Text Color */
 .text-gradient-fluid,
-.text-gradient-blue-red {
-  background: linear-gradient(135deg, #1677FF 0%, #287BFF 40%, #B5122A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.text-gradient-pink,
+.text-gradient-blue-red,
+.text-burgundy {
+  color: #910029;
 }
 
-/* Electric Blue Heading Gradient */
-.text-gradient-blue {
-  background: linear-gradient(135deg, #FFFFFF 30%, #287BFF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Charcoal Primary Heading */
+.text-gradient-heading,
+.text-charcoal {
+  color: #393F4B;
 }
 
-/* Dark Red Accent Gradient */
-.text-gradient-red {
-  background: linear-gradient(135deg, #B5122A 0%, #8B0000 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Charcoal to Electric Blue Gradient */
-.text-gradient-heading {
-  background: linear-gradient(135deg, #FFFFFF 40%, #287BFF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Premium Black Glass Panel */
+/* Clean Panel with Soft Shadow and Refined Charcoal Border */
 .glass-panel {
-  background: rgba(10, 10, 13, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.5);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #FFFFFF;
+  border: 1px solid rgba(57, 63, 75, 0.1);
+  box-shadow: 0 4px 20px -2px rgba(57, 63, 75, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel:hover {
-  background: rgba(14, 14, 18, 0.92);
-  border-color: rgba(22, 119, 255, 0.3);
-  box-shadow: 0 16px 40px -6px rgba(0, 0, 0, 0.85), 0 0 24px -2px rgba(22, 119, 255, 0.15);
-  transform: translateY(-3px);
+  background: #FFFFFF;
+  border-color: rgba(145, 0, 41, 0.3);
+  box-shadow: 0 10px 30px -4px rgba(145, 0, 41, 0.08);
+  transform: translateY(-2px);
 }
 
-/* Pure Black Navigation Bar */
+/* Clean Ice-Tinted Sticky Navigation Bar */
 .glass-nav {
-  background: rgba(5, 5, 5, 0.88);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+  background: rgba(236, 244, 247, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(57, 63, 75, 0.1);
+  box-shadow: 0 2px 12px rgba(57, 63, 75, 0.03);
 }
 
-/* Primary Electric Blue Button */
-.btn-fluid-primary {
-  background: #1677FF;
-  color: #FFFFFF;
-  box-shadow: 0 0 20px rgba(22, 119, 255, 0.35);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* Primary Burgundy Button */
+.btn-fluid-primary,
+.btn-primary-burgundy {
+  background: #910029;
+  color: #ECF4F7;
+  box-shadow: 0 4px 14px rgba(145, 0, 41, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-fluid-primary:hover {
-  background: #287BFF;
-  box-shadow: 0 0 28px rgba(40, 123, 255, 0.5);
-  transform: translateY(-2px);
+.btn-fluid-primary:hover,
+.btn-primary-burgundy:hover {
+  background: #7A0023;
+  box-shadow: 0 6px 20px rgba(145, 0, 41, 0.35);
+  transform: translateY(-1px);
 }
 
-/* Secondary Transparent Black Glass Button */
-.btn-fluid-secondary {
-  background: rgba(10, 10, 13, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* Secondary Light Ice Button with Charcoal Text & Burgundy Border */
+.btn-fluid-secondary,
+.btn-secondary-burgundy {
+  background: #ECF4F7;
+  color: #393F4B;
+  border: 1px solid rgba(145, 0, 41, 0.35);
+  box-shadow: 0 2px 8px rgba(57, 63, 75, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-fluid-secondary:hover {
-  background: rgba(22, 119, 255, 0.1);
-  border-color: rgba(22, 119, 255, 0.4);
-  box-shadow: 0 4px 18px rgba(22, 119, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-/* Subtle Dark Grid Accent */
-.bg-grid-fluid {
-  background-size: 56px 56px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+.btn-fluid-secondary:hover,
+.btn-secondary-burgundy:hover {
+  background: #FFFFFF;
+  border-color: #910029;
+  color: #910029;
+  transform: translateY(-1px);
 }
 
 /* Reduced motion preference */

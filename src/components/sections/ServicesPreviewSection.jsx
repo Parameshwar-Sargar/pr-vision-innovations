@@ -13,7 +13,10 @@ import { SystemMonitorVisual } from "../visuals/services/SystemMonitorVisual";
 
 /**
  * Services Preview Section
- * Strictly Pure Black (#050505 / #0A0A0D) with Electric Blue (#1677FF) and Deep Crimson (#B5122A).
+ * Premium Three-Color Theme:
+ * - Dominant background: Light Ice #ECF4F7
+ * - Clean white cards with subtle borders
+ * - Deep Burgundy (#910029) icons, tags, and action links
  */
 export function ServicesPreviewSection() {
   const iconComponents = {
@@ -43,11 +46,11 @@ export function ServicesPreviewSection() {
   };
 
   return (
-    <section id="services" className="relative py-24 lg:py-32 overflow-hidden bg-[#050505]">
+    <section id="services" className="relative py-24 lg:py-32 overflow-hidden bg-[#ECF4F7]">
       <Container className="relative z-10">
         <SectionHeader
           badge="Specialized Services"
-          badgeVariant="blue"
+          badgeVariant="burgundy"
           title="Digital Capabilities Tailored for"
           titleAccent="Modern Growth"
           description="We deliver five core digital disciplines engineered to help businesses establish, enhance, and protect their web presence."
@@ -66,7 +69,7 @@ export function ServicesPreviewSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className={`relative rounded-3xl p-6 sm:p-7 glass-panel flex flex-col justify-between hover:-translate-y-2 transition-all duration-300 group ${
+                className={`relative rounded-3xl p-6 sm:p-7 bg-white border border-[#393F4B]/10 shadow-sm hover:border-[#910029]/30 hover:shadow-md flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 group ${
                   isFullSpan ? "md:col-span-2 lg:col-span-1" : ""
                 }`}
               >
@@ -78,18 +81,18 @@ export function ServicesPreviewSection() {
                     </div>
                   )}
 
-                  {/* Service Icon with Clean Blue Accent & Title */}
+                  {/* Service Icon with Burgundy Accent & Title */}
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#0A0A0D] border border-white/10 flex items-center justify-center text-[#1677FF] group-hover:text-[#B5122A] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[#910029]/10 border border-[#910029]/20 flex items-center justify-center text-[#910029] group-hover:scale-105 transition-all duration-300 shadow-xs shrink-0">
                       <Icon className="w-4.5 h-4.5" strokeWidth={1.8} />
                     </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#287BFF] transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-[#393F4B] group-hover:text-[#910029] transition-colors leading-snug">
                       {service.title}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="mt-3 text-sm text-[#A1A1AA] leading-relaxed font-normal">
+                  <p className="mt-3 text-sm text-[#393F4B]/80 leading-relaxed font-normal">
                     {service.shortDesc}
                   </p>
 
@@ -98,7 +101,7 @@ export function ServicesPreviewSection() {
                     {service.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white/[0.05] text-[#A1A1AA] border border-white/10"
+                        className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-[#ECF4F7] text-[#393F4B] border border-[#393F4B]/10"
                       >
                         {tag}
                       </span>
@@ -107,10 +110,10 @@ export function ServicesPreviewSection() {
                 </div>
 
                 {/* Bottom Action CTA */}
-                <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
+                <div className="mt-8 pt-5 border-t border-[#393F4B]/10 flex items-center justify-between">
                   <button
                     onClick={() => handleInquire(service.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#287BFF] hover:text-white transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#910029] hover:text-[#7A0023] transition-colors cursor-pointer"
                   >
                     <span>Inquire Service</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" strokeWidth={1.8} />
@@ -118,7 +121,7 @@ export function ServicesPreviewSection() {
 
                   <button
                     onClick={() => handleInquire(service.title)}
-                    className="p-2 rounded-xl bg-[#0A0A0D] border border-white/10 text-white/80 hover:text-[#1677FF] hover:border-[#1677FF]/40 transition-colors cursor-pointer shadow-xs"
+                    className="p-2 rounded-xl bg-[#ECF4F7] border border-[#393F4B]/15 text-[#393F4B] hover:bg-[#910029] hover:text-[#ECF4F7] hover:border-[#910029] transition-colors cursor-pointer shadow-xs"
                     title="Quick WhatsApp Inquiry"
                     aria-label={`WhatsApp inquiry for ${service.title}`}
                   >

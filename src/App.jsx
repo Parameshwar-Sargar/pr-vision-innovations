@@ -7,24 +7,22 @@ import { FluidWaveBackground } from "./components/common/FluidWaveBackground";
 
 /**
  * Root Application Component with React Router DOM integration
- * Dark Cinematic identity with Pure Black (#050505), Electric Blue (#1677FF),
- * and Deep Crimson (#B5122A).
+ * Sophisticated Light Ice (#ECF4F7), Slate Charcoal (#393F4B), and Deep Burgundy (#910029) visual identity.
  */
 function App() {
   return (
     <Router>
-      <div className="relative flex flex-col min-h-screen bg-[#050505] text-white selection:bg-[#1677FF] selection:text-white">
-        {/* Global Dark Cinematic Ambient Background */}
+      <div className="relative flex flex-col min-h-screen bg-[#ECF4F7] text-[#393F4B] selection:bg-[#910029] selection:text-[#ECF4F7]">
+        {/* Clean Minimal Background */}
         <FluidWaveBackground />
 
-        {/* Translucent Glass Navigation Bar */}
+        {/* Clean Ice-Glass Navigation Bar */}
         <Navbar />
 
         {/* Main Application Routes */}
         <div className="flex-grow relative z-10">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            {/* Future pages can be plugged into this router */}
             <Route path="*" element={<HomePage />} />
           </Routes>
         </div>

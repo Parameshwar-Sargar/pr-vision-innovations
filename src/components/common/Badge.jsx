@@ -2,43 +2,51 @@ import React from "react";
 import { cn } from "../../utils/cn";
 
 /**
- * Reusable pill badge with glowing indicator for Dark Cinematic Theme
- * Strictly uses Black, Electric Blue, and Dark Red.
+ * Reusable pill badge for Light Ice, Slate Charcoal & Deep Burgundy Theme
  */
 export function Badge({
   children,
-  variant = "blue", // 'blue' | 'red' | 'neutral'
+  variant = "burgundy", // 'burgundy' | 'charcoal' | 'neutral'
   showDot = true,
+  icon: Icon,
   className = "",
 }) {
   const variantStyles = {
-    blue: "bg-[#0A0A0D]/90 backdrop-blur-md text-[#287BFF] border-[#1677FF]/35 shadow-[0_0_12px_rgba(22,119,255,0.18)]",
-    red: "bg-[#0A0A0D]/90 backdrop-blur-md text-[#FF4D4F] border-[#B5122A]/40 shadow-[0_0_12px_rgba(181,18,42,0.2)]",
-    neutral: "bg-[#0A0A0D]/90 backdrop-blur-md text-[#A1A1AA] border-white/10 shadow-sm",
+    burgundy: "bg-[#910029]/10 text-[#910029] border-[#910029]/25 shadow-xs",
+    pink: "bg-[#910029]/10 text-[#910029] border-[#910029]/25 shadow-xs",
+    blue: "bg-[#910029]/10 text-[#910029] border-[#910029]/25 shadow-xs",
+    red: "bg-[#910029]/10 text-[#910029] border-[#910029]/25 shadow-xs",
+    charcoal: "bg-white text-[#393F4B] border-[#393F4B]/20 shadow-xs",
+    neutral: "bg-white text-[#393F4B] border-[#393F4B]/15 shadow-xs",
   };
 
   const dotColors = {
-    blue: "bg-[#1677FF]",
-    red: "bg-[#B5122A]",
-    neutral: "bg-[#A1A1AA]",
+    burgundy: "bg-[#910029]",
+    pink: "bg-[#910029]",
+    blue: "bg-[#910029]",
+    red: "bg-[#910029]",
+    charcoal: "bg-[#393F4B]",
+    neutral: "bg-[#393F4B]",
   };
 
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase border backdrop-blur-sm select-none",
-        variantStyles[variant] || variantStyles.blue,
+        "inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase border select-none",
+        variantStyles[variant] || variantStyles.burgundy,
         className
       )}
     >
-      {showDot && (
+      {Icon ? (
+        <Icon className="w-3.5 h-3.5 shrink-0" strokeWidth={1.8} />
+      ) : showDot ? (
         <span
           className={cn(
             "w-1.5 h-1.5 rounded-full animate-pulse",
-            dotColors[variant] || dotColors.blue
+            dotColors[variant] || dotColors.burgundy
           )}
         />
-      )}
+      ) : null}
       <span>{children}</span>
     </div>
   );

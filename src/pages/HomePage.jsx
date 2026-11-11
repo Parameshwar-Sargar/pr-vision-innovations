@@ -13,7 +13,7 @@ import { CtaSection } from "../components/sections/CtaSection";
 export function HomePage() {
   return (
     <main className="flex flex-col min-h-screen">
-      {/* Hero Section with Interactive 3D Canvas */}
+      {/* Hero Section with Editorial 2D Showcase */}
       <HeroSection />
 
       {/* About Preview Section */}

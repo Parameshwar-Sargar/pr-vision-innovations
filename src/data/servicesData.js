@@ -1,6 +1,6 @@
 /**
  * Services preview data for PR VISION INNOVATIONS
- * 5 primary services as requested
+ * 5 primary services
  */
 export const servicesData = [
   {
@@ -10,7 +10,7 @@ export const servicesData = [
     fullDesc: "Modern static websites built with optimized assets, clean HTML/CSS/JS, instant page loads, and top-tier accessibility. Ideal for brand awareness and fast deployment.",
     icon: "Layout",
     tags: ["High Speed", "SEO Friendly", "Zero Maintenance", "Cost Effective"],
-    gradient: "from-blue-500/20 to-cyan-500/10"
+    gradient: "from-[#910029]/15 to-transparent"
   },
   {
     id: "react-development",
@@ -19,7 +19,7 @@ export const servicesData = [
     fullDesc: "Production-ready React architectures featuring modular components, intuitive state management, custom hooks, and seamless API integrations.",
     icon: "Atom",
     tags: ["Component Architecture", "Single Page Apps", "Interactive UI", "Vite & Next.js"],
-    gradient: "from-blue-600/20 to-indigo-600/10"
+    gradient: "from-[#910029]/15 to-transparent"
   },
   {
     id: "full-stack-development",
@@ -28,7 +28,7 @@ export const servicesData = [
     fullDesc: "Complete digital products architected with clean data layers, secure RESTful APIs, modern databases, and cohesive full-stack integrations.",
     icon: "Layers",
     tags: ["REST APIs", "Database Design", "Scalable Systems", "Full Lifecycle"],
-    gradient: "from-violet-600/20 to-purple-600/10"
+    gradient: "from-[#910029]/15 to-transparent"
   },
   {
     id: "website-redesign",
@@ -37,7 +37,7 @@ export const servicesData = [
     fullDesc: "Comprehensive audits and structural overhauls that elevate visual brand identity, drastically improve mobile usability, and boost performance metrics.",
     icon: "Sparkles",
     tags: ["Modern UI/UX", "Mobile First", "Performance Overhaul", "Conversion Focus"],
-    gradient: "from-cyan-500/20 to-blue-500/10"
+    gradient: "from-[#910029]/15 to-transparent"
   },
   {
     id: "website-maintenance",
@@ -46,6 +46,6 @@ export const servicesData = [
     fullDesc: "Reliable technical support, ongoing content adjustments, security patches, speed optimizations, and uptime assurance for peace of mind.",
     icon: "ShieldCheck",
     tags: ["Uptime Assurance", "Security Audits", "Speed Tuning", "Regular Backups"],
-    gradient: "from-blue-500/20 to-violet-500/10"
+    gradient: "from-[#910029]/15 to-transparent"
   }
 ];

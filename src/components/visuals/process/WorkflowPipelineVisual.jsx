@@ -4,14 +4,14 @@ import { Compass, FileCode2, Palette, Code2, Rocket, CheckCircle2 } from "lucide
 
 /**
  * Animated Interactive Workflow Pipeline Visual for Process Section
- * Dark Cinematic identity with Electric Blue laser line and Deep Crimson accents.
+ * Strictly styled in Light Ice (#ECF4F7), Slate Charcoal (#393F4B), and Deep Burgundy (#910029).
  */
 export function WorkflowPipelineVisual({ activeStep, onSelectStep }) {
   const steps = [
     { num: "01", name: "Discover", icon: Compass, deliverable: "Requirements Brief & Tech Scope" },
     { num: "02", name: "Plan", icon: FileCode2, deliverable: "Architecture Spec & Component Schema" },
     { num: "03", name: "Design", icon: Palette, deliverable: "Figma Tokens & Interactive UI Mockups" },
-    { num: "04", name: "Develop", icon: Code2, deliverable: "React 19, Tailwind CSS & 3D Integration" },
+    { num: "04", name: "Develop", icon: Code2, deliverable: "React 19, Tailwind CSS & Modular Components" },
     { num: "05", name: "Deliver", icon: Rocket, deliverable: "Lighthouse 100, CI/CD & Production Launch" },
   ];
 
@@ -19,32 +19,29 @@ export function WorkflowPipelineVisual({ activeStep, onSelectStep }) {
   const activeData = steps[currentIdx >= 0 ? currentIdx : 0];
 
   return (
-    <div className="w-full mb-12 p-6 sm:p-8 rounded-3xl bg-[#0A0A0D]/90 relative overflow-hidden border border-white/10 backdrop-blur-xl shadow-2xl">
-      {/* Ambient background light */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1677FF]/10 via-[#B5122A]/06 to-transparent pointer-events-none" />
-
+    <div className="w-full mb-12 p-6 sm:p-8 rounded-3xl bg-white relative overflow-hidden border border-[#393F4B]/10 shadow-sm">
       {/* Top Workflow Status Bar */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-6 border-b border-white/10 relative z-10">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-6 border-b border-[#393F4B]/10 relative z-10">
         <div className="flex items-center gap-2.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#1677FF] animate-pulse shadow-[0_0_8px_#1677FF]" />
-          <span className="text-xs font-bold uppercase tracking-wider text-white font-mono">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#910029] animate-pulse" />
+          <span className="text-xs font-bold uppercase tracking-wider text-[#393F4B] font-mono">
             Interactive Engineering Pipeline
           </span>
         </div>
-        <span className="text-xs text-[#A1A1AA] font-mono">
-          Stage <strong className="text-[#1677FF]">{activeData.num} of 05</strong>: {activeData.name}
+        <span className="text-xs text-[#393F4B]/70 font-mono">
+          Stage <strong className="text-[#910029] font-bold">{activeData.num} of 05</strong>: {activeData.name}
         </span>
       </div>
 
-      {/* Connected Interactive Stage Nodes with Moving Gradient Pulse */}
+      {/* Connected Interactive Stage Nodes */}
       <div className="relative py-8 sm:py-10">
         {/* Continuous Pipeline Track */}
-        <div className="absolute top-1/2 left-8 right-8 h-1 bg-white/10 -translate-y-1/2 z-0 rounded-full overflow-hidden">
-          {/* Moving Gradient Laser Beam */}
+        <div className="absolute top-1/2 left-8 right-8 h-1 bg-[#393F4B]/10 -translate-y-1/2 z-0 rounded-full overflow-hidden">
+          {/* Moving Laser Beam in Deep Burgundy */}
           <motion.div
             animate={{ x: ["-100%", "200%"] }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="w-1/3 h-full bg-gradient-to-r from-transparent via-[#1677FF] to-[#B5122A] rounded-full"
+            className="w-1/3 h-full bg-[#910029] rounded-full"
           />
         </div>
 
@@ -62,12 +59,12 @@ export function WorkflowPipelineVisual({ activeStep, onSelectStep }) {
               >
                 {/* Node Orb */}
                 <motion.div
-                  whileHover={{ scale: 1.12 }}
+                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-md ${
+                  className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-xs ${
                     isSelected
-                      ? "bg-[#0A0A0D] border-2 border-[#1677FF] shadow-[0_0_25px_rgba(22,119,255,0.4)] text-[#1677FF]"
-                      : "bg-white/[0.04] border border-white/10 text-[#A1A1AA] group-hover:text-white group-hover:border-white/25"
+                      ? "bg-[#910029]/10 border-2 border-[#910029] text-[#910029]"
+                      : "bg-[#ECF4F7] border border-[#393F4B]/15 text-[#393F4B]/60 group-hover:text-[#910029] group-hover:border-[#910029]/30"
                   }`}
                 >
                   <StepIcon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.8} />
@@ -76,12 +73,12 @@ export function WorkflowPipelineVisual({ activeStep, onSelectStep }) {
                 {/* Stage Title */}
                 <span
                   className={`mt-2.5 text-[11px] sm:text-xs font-bold tracking-tight transition-colors ${
-                    isSelected ? "text-[#1677FF]" : "text-[#A1A1AA] group-hover:text-white"
+                    isSelected ? "text-[#910029]" : "text-[#393F4B]/80 group-hover:text-[#393F4B]"
                   }`}
                 >
                   {s.name}
                 </span>
-                <span className="text-[9px] font-mono text-[#A1A1AA]/60">Step {s.num}</span>
+                <span className="text-[9px] font-mono text-[#393F4B]/50">Step {s.num}</span>
               </button>
             );
           })}
@@ -96,15 +93,15 @@ export function WorkflowPipelineVisual({ activeStep, onSelectStep }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.25 }}
-          className="pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#A1A1AA] relative z-10"
+          className="pt-5 border-t border-[#393F4B]/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#393F4B]/80 relative z-10"
         >
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#1677FF] shrink-0" strokeWidth={1.8} />
+            <CheckCircle2 className="w-4 h-4 text-[#910029] shrink-0" strokeWidth={1.8} />
             <span>
-              Primary Milestone Output: <strong className="text-white">{activeData.deliverable}</strong>
+              Primary Milestone Output: <strong className="text-[#393F4B]">{activeData.deliverable}</strong>
             </span>
           </div>
-          <span className="text-[11px] font-mono text-[#B5122A] bg-[#B5122A]/10 border border-[#B5122A]/30 px-2.5 py-1 rounded-lg">
+          <span className="text-[11px] font-mono text-[#910029] bg-[#910029]/10 border border-[#910029]/25 px-2.5 py-1 rounded-lg">
             Zero Guesswork • Verified Quality Gates
           </span>
         </motion.div>
