@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { MousePointer2, Palette, CheckCircle2 } from "lucide-react";
 
 /**
  * Service 3: UI/UX Design Visual
  * Layered design artboards in Light Ice (#ECF4F7), Slate Charcoal (#393F4B), and Deep Burgundy (#910029).
+ * Features standard Lucide React icons.
  */
 export function UiUxLayersVisual() {
   return (
@@ -28,7 +30,10 @@ export function UiUxLayersVisual() {
           className="absolute w-30 h-22 rounded-xl bg-white border border-[#910029]/40 p-2 shadow-sm flex flex-col justify-between"
         >
           <div className="flex items-center justify-between">
-            <span className="text-[8px] font-bold text-[#393F4B]">Design Tokens</span>
+            <span className="text-[8px] font-bold text-[#393F4B] flex items-center gap-1">
+              <Palette className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
+              Tokens
+            </span>
             <div className="flex gap-1">
               <span className="w-2 h-2 rounded-full bg-[#910029]" />
               <span className="w-2 h-2 rounded-full bg-[#393F4B]" />
@@ -52,21 +57,24 @@ export function UiUxLayersVisual() {
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           className="absolute z-10 px-1.5 py-0.5 rounded-md bg-[#393F4B] text-[#ECF4F7] text-[7px] font-mono shadow-sm flex items-center gap-1"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#910029]" />
+          <MousePointer2 className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
           <span>Figma</span>
         </motion.div>
       </div>
 
       {/* Right Column: Mini Metric Tokens */}
       <div className="space-y-1.5 text-right font-mono text-[8px] pr-1">
-        <div className="px-2 py-1 rounded-md bg-white border border-[#393F4B]/15 text-[#393F4B] font-semibold">
-          WCAG AAA
+        <div className="px-2 py-1 rounded-md bg-white border border-[#393F4B]/15 text-[#393F4B] font-semibold flex items-center justify-end gap-1">
+          <CheckCircle2 className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
+          <span>WCAG AAA</span>
         </div>
-        <div className="px-2 py-1 rounded-md bg-[#910029]/10 border border-[#910029]/25 text-[#910029] font-semibold">
-          Wireframe
+        <div className="px-2 py-1 rounded-md bg-[#910029]/10 border border-[#910029]/25 text-[#910029] font-semibold flex items-center justify-end gap-1">
+          <Palette className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
+          <span>Wireframe</span>
         </div>
-        <div className="px-2 py-1 rounded-md bg-white border border-[#393F4B]/15 text-[#393F4B] font-semibold">
-          Figma Ready
+        <div className="px-2 py-1 rounded-md bg-white border border-[#393F4B]/15 text-[#393F4B] font-semibold flex items-center justify-end gap-1">
+          <CheckCircle2 className="w-2.5 h-2.5 text-[#393F4B]" strokeWidth={1.8} />
+          <span>Figma Ready</span>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Compass, FileCode2, Palette, Code2, Rocket, CheckCircle2 } from "lucide-react";
+import { Compass, FileCode2, Palette, Code2, Rocket, CheckCircle2, Activity } from "lucide-react";
 
 /**
  * Animated Interactive Workflow Pipeline Visual for Process Section
@@ -23,7 +23,7 @@ export function WorkflowPipelineVisual({ activeStep, onSelectStep }) {
       {/* Top Workflow Status Bar */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-6 border-b border-[#393F4B]/10 relative z-10">
         <div className="flex items-center gap-2.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#910029] animate-pulse" />
+          <Activity className="w-4 h-4 text-[#910029]" strokeWidth={1.8} />
           <span className="text-xs font-bold uppercase tracking-wider text-[#393F4B] font-mono">
             Interactive Engineering Pipeline
           </span>

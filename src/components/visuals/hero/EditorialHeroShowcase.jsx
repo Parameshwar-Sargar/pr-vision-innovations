@@ -9,7 +9,9 @@ import {
   CheckCircle2,
   TrendingUp,
   Cpu,
-  Monitor
+  Monitor,
+  Palette,
+  Wifi
 } from "lucide-react";
 
 /**
@@ -156,7 +158,7 @@ export function EditorialHeroShowcase() {
             {/* Website Hero Block */}
             <div className="space-y-2">
               <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#910029]/8 border border-[#910029]/20 text-[9px] font-bold text-[#910029] uppercase tracking-wider">
-                <span className="w-1 h-1 rounded-full bg-[#910029]" />
+                <Sparkles className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
                 Next-Gen Enterprise Platform
               </div>
 
@@ -239,7 +241,7 @@ export function EditorialHeroShowcase() {
             <span className="text-[8.5px] sm:text-[9px] font-mono font-bold tracking-widest text-[#910029] uppercase">
               TYPE SPECIMEN
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#910029]" />
+            <Sparkles className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
           </div>
 
           <div className="flex items-baseline justify-between py-0.5 sm:py-1 border-b border-[#393F4B]/10">
@@ -279,7 +281,7 @@ export function EditorialHeroShowcase() {
             <span>09:41</span>
             <div className="w-6 sm:w-8 h-1.5 sm:h-2 rounded-full bg-[#393F4B]/20 mx-auto" />
             <div className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#910029]" />
+              <Wifi className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
               <span>5G</span>
             </div>
           </div>
@@ -329,7 +331,7 @@ export function EditorialHeroShowcase() {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="absolute -bottom-3 left-0 sm:-bottom-5 sm:left-2 inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white text-[#393F4B] border border-[#393F4B]/15 shadow-sm text-[10px] sm:text-[11px] font-semibold z-20"
         >
-          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#910029]" />
+          <Palette className="w-3 h-3 text-[#910029]" strokeWidth={1.8} />
           <span>Web Design</span>
         </motion.div>
 

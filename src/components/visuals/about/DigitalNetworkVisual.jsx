@@ -1,9 +1,10 @@
 import React from "react";
-import { ShieldCheck, Zap, Layers, Sparkles } from "lucide-react";
+import { ShieldCheck, Zap, Layers, Sparkles, Workflow } from "lucide-react";
 
 /**
  * Studio Engineering Standards Showcase
  * Strictly styled in Light Ice (#ECF4F7), Slate Charcoal (#393F4B), and Deep Burgundy (#910029).
+ * Features standard Lucide React icons.
  */
 export function DigitalNetworkVisual() {
   const metrics = [
@@ -17,7 +18,7 @@ export function DigitalNetworkVisual() {
     <div className="w-full rounded-2xl bg-white border border-[#393F4B]/10 shadow-xs p-6 sm:p-8">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#393F4B]/10 gap-3">
         <div className="flex items-center gap-2.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#910029]" />
+          <Workflow className="w-4 h-4 text-[#910029]" strokeWidth={1.8} />
           <span className="text-xs font-bold uppercase tracking-wider text-[#393F4B] font-mono">
             Studio Engineering Standards
           </span>

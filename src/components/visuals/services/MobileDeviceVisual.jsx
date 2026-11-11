@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Smartphone, Layers, Check } from "lucide-react";
 
 /**
  * Service 2: Mobile Development Visual
  * Smartphone mockup in Light Ice (#ECF4F7), Slate Charcoal (#393F4B), and Deep Burgundy (#910029).
+ * Features standard Lucide React icons.
  */
 export function MobileDeviceVisual() {
   return (
@@ -18,7 +20,10 @@ export function MobileDeviceVisual() {
         {/* Screen Content */}
         <div className="relative flex-1 my-1 rounded-[12px] bg-[#ECF4F7] p-1.5 flex flex-col justify-between overflow-hidden border border-[#393F4B]/10">
           <div className="flex items-center justify-between">
-            <span className="text-[8px] font-bold text-[#393F4B]">React Native</span>
+            <span className="text-[8px] font-bold text-[#393F4B] flex items-center gap-1">
+              <Smartphone className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
+              React Native
+            </span>
             <span className="text-[7px] px-1 py-0.2 rounded-full bg-white text-[#910029] font-semibold border border-[#910029]/20">60 FPS</span>
           </div>
 
@@ -28,8 +33,14 @@ export function MobileDeviceVisual() {
             className="p-1.5 rounded-md bg-white border border-[#393F4B]/10 shadow-xs space-y-1"
           >
             <div className="flex justify-between items-center text-[7px]">
-              <span className="text-[#393F4B]/70">Cross-Platform</span>
-              <span className="font-bold text-[#910029]">iOS &amp; Android</span>
+              <span className="text-[#393F4B]/70 flex items-center gap-0.5">
+                <Check className="w-2 h-2 text-[#910029]" strokeWidth={2} />
+                Cross-Platform
+              </span>
+              <span className="font-bold text-[#910029] flex items-center gap-0.5">
+                <Layers className="w-2 h-2 text-[#910029]" strokeWidth={1.8} />
+                iOS &amp; Android
+              </span>
             </div>
             <div className="w-full bg-[#ECF4F7] h-1 rounded-full overflow-hidden">
               <motion.div

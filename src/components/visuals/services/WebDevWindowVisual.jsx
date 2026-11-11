@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Code, Lock, Zap, CheckCircle2 } from "lucide-react";
 
 /**
  * Service 1: Web Development Visual
  * Clean browser window in Light Ice (#ECF4F7), Slate Charcoal (#393F4B), and Deep Burgundy (#910029).
+ * Features standard Lucide React icons.
  */
 export function WebDevWindowVisual() {
   return (
@@ -16,10 +18,13 @@ export function WebDevWindowVisual() {
           <span className="w-2.5 h-2.5 rounded-full bg-[#910029]" />
         </div>
         <div className="flex-1 max-w-[170px] mx-2 px-2 py-0.5 rounded-md bg-white text-[10px] text-[#393F4B] font-mono truncate text-center flex items-center justify-center gap-1 border border-[#393F4B]/10">
+          <Lock className="w-2.5 h-2.5 text-[#910029] shrink-0" strokeWidth={1.8} />
           <span className="text-[#910029] font-bold">https://</span>
           <span>prvision.in</span>
         </div>
-        <div className="text-[10px] font-mono text-[#910029] font-semibold">&lt;/&gt;</div>
+        <div className="text-[#910029]">
+          <Code className="w-3.5 h-3.5" strokeWidth={1.8} />
+        </div>
       </div>
 
       {/* Simulated Website Layout & Code Snippet */}
@@ -65,8 +70,14 @@ export function WebDevWindowVisual() {
 
       {/* Footer Info Pill */}
       <div className="flex items-center justify-between text-[9px] text-[#393F4B]/75 font-mono pt-1.5 border-t border-[#393F4B]/10">
-        <span className="text-[#910029] font-medium">● Fast Build</span>
-        <span>SEO Optimized</span>
+        <span className="text-[#910029] font-medium flex items-center gap-1">
+          <Zap className="w-3 h-3 text-[#910029]" strokeWidth={1.8} />
+          Fast Build
+        </span>
+        <span className="flex items-center gap-1">
+          <CheckCircle2 className="w-3 h-3 text-[#393F4B]/60" strokeWidth={1.8} />
+          SEO Optimized
+        </span>
       </div>
     </div>
   );

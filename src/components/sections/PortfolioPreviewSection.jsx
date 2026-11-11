@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Sparkles, Eye, X } from "lucide-react";
+import { ExternalLink, Sparkles, Eye, X, Check } from "lucide-react";
 import { Container } from "../common/Container";
 import { SectionHeader } from "../common/SectionHeader";
 import { Badge } from "../common/Badge";
@@ -183,7 +183,7 @@ export function PortfolioPreviewSection() {
                 <ul className="space-y-1.5 text-xs text-[#393F4B]">
                   {(selectedProject.features || selectedProject.technologies || []).map((f, i) => (
                     <li key={i} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#910029]" />
+                      <Check className="w-3.5 h-3.5 text-[#910029] shrink-0" strokeWidth={2} />
                       <span>{f}</span>
                     </li>
                   ))}

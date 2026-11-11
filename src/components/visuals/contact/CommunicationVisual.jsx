@@ -23,7 +23,7 @@ export function CommunicationVisual() {
             </div>
             <span className="text-[10px] font-bold text-[#393F4B] font-mono">Inquiry Dispatch</span>
           </div>
-          <span className="w-2 h-2 rounded-full bg-[#910029] animate-pulse" />
+          <Sparkles className="w-3.5 h-3.5 text-[#910029]" strokeWidth={1.8} />
         </div>
 
         {/* Envelope Center Graphic: Wax Seal / Stamp in Deep Burgundy */}

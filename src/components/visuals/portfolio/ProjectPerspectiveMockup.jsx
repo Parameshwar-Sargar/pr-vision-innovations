@@ -1,10 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  Zap,
+  Activity,
+  Radio,
+  Building2,
+  CheckCircle2,
+  ShoppingCart,
+  ShieldCheck,
+  Lock,
+  Server
+} from "lucide-react";
 
 /**
  * Clean Flat 2D Browser & UI Mockup for Portfolio Projects
  * Strictly styled in Light Ice (#ECF4F7), Slate Charcoal (#393F4B), and Deep Burgundy (#910029).
- * 100% Flat 2D layout — ZERO 3D transforms, perspective, or simulated 3D objects.
+ * 100% Flat 2D layout with standardized Lucide React icons.
  */
 export function ProjectPerspectiveMockup({ projectId }) {
   if (projectId === "nexus-analytics") {
@@ -22,10 +33,11 @@ export function ProjectPerspectiveMockup({ projectId }) {
               <span className="w-2 h-2 rounded-full bg-[#910029]/50" />
               <span className="w-2 h-2 rounded-full bg-[#910029]" />
             </div>
-            <span className="text-[9px] font-mono text-[#393F4B] bg-[#ECF4F7] px-2 py-0.5 rounded-full border border-[#393F4B]/10">
+            <span className="text-[9px] font-mono text-[#393F4B] bg-[#ECF4F7] px-2 py-0.5 rounded-full border border-[#393F4B]/10 flex items-center gap-1">
+              <Lock className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
               app.nexus-intelligence.io
             </span>
-            <span className="w-2 h-2 rounded-full bg-[#910029]" />
+            <Activity className="w-3 h-3 text-[#910029]" strokeWidth={1.8} />
           </div>
 
           {/* SaaS Dashboard Interface */}
@@ -56,8 +68,14 @@ export function ProjectPerspectiveMockup({ projectId }) {
           </div>
 
           <div className="flex justify-between items-center text-[8px] font-mono text-[#393F4B]/70">
-            <span>Latency: 8ms</span>
-            <span className="text-[#910029] font-semibold">Live Streaming Active</span>
+            <span className="flex items-center gap-1">
+              <Activity className="w-3 h-3 text-[#393F4B]/60" strokeWidth={1.8} />
+              Latency: 8ms
+            </span>
+            <span className="text-[#910029] font-semibold flex items-center gap-1">
+              <Radio className="w-3 h-3 text-[#910029]" strokeWidth={1.8} />
+              Live Streaming Active
+            </span>
           </div>
         </motion.div>
       </div>
@@ -73,7 +91,10 @@ export function ProjectPerspectiveMockup({ projectId }) {
           className="relative w-full max-w-[340px] h-44 sm:h-48 rounded-2xl bg-white border border-[#393F4B]/15 shadow-md p-3 flex flex-col justify-between text-[#393F4B]"
         >
           <div className="flex items-center justify-between pb-1.5 border-b border-[#393F4B]/10 text-[9px] text-[#393F4B]/70">
-            <span className="font-mono text-[#910029] font-semibold">Architectural Showcase</span>
+            <span className="font-mono text-[#910029] font-semibold flex items-center gap-1">
+              <Building2 className="w-3 h-3 text-[#910029]" strokeWidth={1.8} />
+              Architectural Showcase
+            </span>
             <span>Ultra HD Fluid UI</span>
           </div>
 
@@ -96,8 +117,14 @@ export function ProjectPerspectiveMockup({ projectId }) {
           </div>
 
           <div className="flex items-center justify-between text-[9px] text-[#393F4B]/70 font-mono">
-            <span>Apex Spatial Architecture</span>
-            <span className="text-[#910029] font-semibold">Responsive Gallery</span>
+            <span className="flex items-center gap-1">
+              <Building2 className="w-3 h-3 text-[#393F4B]/60" strokeWidth={1.8} />
+              Apex Spatial Architecture
+            </span>
+            <span className="text-[#910029] font-semibold flex items-center gap-1">
+              <CheckCircle2 className="w-3 h-3" strokeWidth={1.8} />
+              Responsive Gallery
+            </span>
           </div>
         </motion.div>
       </div>
@@ -118,15 +145,19 @@ export function ProjectPerspectiveMockup({ projectId }) {
               <span className="w-2 h-2 rounded-full bg-[#910029]/50" />
               <span className="w-2 h-2 rounded-full bg-[#910029]" />
             </div>
-            <span className="text-[9px] font-mono text-[#393F4B] bg-[#ECF4F7] px-2 py-0.5 rounded-full border border-[#393F4B]/10">
+            <span className="text-[9px] font-mono text-[#393F4B] bg-[#ECF4F7] px-2 py-0.5 rounded-full border border-[#393F4B]/10 flex items-center gap-1">
+              <Lock className="w-2.5 h-2.5 text-[#910029]" strokeWidth={1.8} />
               store.solis-direct.com
             </span>
-            <span className="text-[9px] font-bold text-[#910029]">Cart (2)</span>
+            <span className="text-[9px] font-bold text-[#910029] flex items-center gap-1">
+              <ShoppingCart className="w-3 h-3 text-[#910029]" strokeWidth={1.8} />
+              Cart (2)
+            </span>
           </div>
 
           <div className="flex items-center gap-3 my-auto">
-            <div className="w-16 h-16 rounded-xl bg-[#ECF4F7] border border-[#393F4B]/15 flex items-center justify-center text-[#910029] text-xl font-bold">
-              ⚡
+            <div className="w-16 h-16 rounded-xl bg-[#ECF4F7] border border-[#393F4B]/15 flex items-center justify-center shadow-xs">
+              <Zap className="w-7 h-7 text-[#910029]" strokeWidth={1.8} />
             </div>
             <div className="flex-1 space-y-1">
               <span className="text-xs font-bold text-[#393F4B] block">Aura Wireless Pods</span>
@@ -142,7 +173,10 @@ export function ProjectPerspectiveMockup({ projectId }) {
 
           <div className="flex justify-between items-center text-[8px] font-mono text-[#393F4B]/70">
             <span>Fast Static Hydration</span>
-            <span className="text-[#910029] font-bold">100% Core Web Vitals</span>
+            <span className="text-[#910029] font-bold flex items-center gap-1">
+              <CheckCircle2 className="w-3 h-3 text-[#910029]" strokeWidth={1.8} />
+              100% Core Web Vitals
+            </span>
           </div>
         </motion.div>
       </div>
@@ -158,8 +192,8 @@ export function ProjectPerspectiveMockup({ projectId }) {
         className="relative w-full max-w-[340px] h-44 sm:h-48 rounded-2xl bg-white border border-[#393F4B]/15 shadow-md p-3 flex flex-col justify-between"
       >
         <div className="flex items-center justify-between pb-2 border-b border-[#393F4B]/10">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#910029] animate-pulse" />
+          <div className="flex items-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#910029]" strokeWidth={1.8} />
             <span className="text-[9px] font-bold text-[#393F4B] font-mono">Veritas SOC 2</span>
           </div>
           <span className="text-[8px] font-mono px-1.5 py-0.5 rounded bg-[#910029]/10 text-[#910029] border border-[#910029]/25 font-bold">
@@ -170,7 +204,7 @@ export function ProjectPerspectiveMockup({ projectId }) {
         <div className="grid grid-cols-3 gap-2 my-auto">
           {["AP-South (Mumbai)", "EU-Central", "US-East"].map((region) => (
             <div key={region} className="p-1.5 rounded-lg bg-[#ECF4F7] border border-[#393F4B]/10 text-center space-y-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#910029] mx-auto block" />
+              <Server className="w-3.5 h-3.5 text-[#910029] mx-auto" strokeWidth={1.8} />
               <span className="text-[8px] font-bold text-[#393F4B] block truncate">{region}</span>
               <span className="text-[7px] text-[#393F4B]/70 font-mono">Status: 200</span>
             </div>
@@ -178,8 +212,14 @@ export function ProjectPerspectiveMockup({ projectId }) {
         </div>
 
         <div className="flex justify-between items-center text-[8px] font-mono text-[#393F4B]/70">
-          <span>Encrypted Gateway (AES-256)</span>
-          <span className="text-[#910029] font-bold">Audit Passed</span>
+          <span className="flex items-center gap-1">
+            <Lock className="w-3 h-3 text-[#393F4B]/60" strokeWidth={1.8} />
+            Encrypted Gateway (AES-256)
+          </span>
+          <span className="text-[#910029] font-bold flex items-center gap-1">
+            <CheckCircle2 className="w-3 h-3 text-[#910029]" strokeWidth={1.8} />
+            Audit Passed
+          </span>
         </div>
       </motion.div>
     </div>

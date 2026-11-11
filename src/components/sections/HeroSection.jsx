@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, MessageSquare, Sparkles, MapPin, Code2 } from "lucide-react";
+import { ArrowRight, MessageSquare, Sparkles, MapPin, Code2, BriefcaseBusiness } from "lucide-react";
 import { Container } from "../common/Container";
 import { Button } from "../common/Button";
 import { EditorialHeroShowcase } from "../visuals/hero/EditorialHeroShowcase";
@@ -131,7 +131,7 @@ export function HeroSection() {
 
               <div className="col-span-2 sm:col-span-1">
                 <div className="text-sm font-bold text-[#393F4B] flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#910029] animate-pulse" />
+                  <BriefcaseBusiness className="w-4 h-4 text-[#910029]" strokeWidth={1.8} />
                   <span>Independent</span>
                 </div>
                 <div className="text-xs text-[#393F4B]/70 mt-0.5">Direct collaboration</div>
